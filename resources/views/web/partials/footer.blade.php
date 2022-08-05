@@ -30,42 +30,42 @@
 
             <div class="col-span-4 md:col-span-2 lg:col-span-1">
                 <div class="text-lg font-semibold tracking-wide">{{ __("Our University") }}</div>
-                <ul class="mt-4 text-sm font-light">
-                    <li><a href="" class="hover:underline">About Us</a></li>
-                    <li><a href="" class="hover:underline">Admissions</a></li>
-                    <li><a href="" class="hover:underline">Academics</a></li>
-                    <li><a href="" class="hover:underline">Events</a></li>
-                    <li><a href="" class="hover:underline">Careers</a></li>
-                    <li><a href="" class="hover:underline">University Catalog</a></li>
+                <ul class="mt-4 text-sm font-light space-y-1">
+                    <li><a href="" class="hover:underline">{{ __("About Us") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Admissions") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Academics") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Events") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Careers") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("University Catalog") }}</a></li>
                 </ul>
             </div>
 
             <div class="col-span-4 md:col-span-2 lg:col-span-1">
                 <div class="text-lg font-semibold tracking-wide">{{ __("Student Links") }}</div>
-                <ul class="mt-4 text-sm font-light">
-                    <li><a href="" class="hover:underline">Open LMS</a></li>
-                    <li><a href="" class="hover:underline">E-mail Login</a></li>
-                    <li><a href="" class="hover:underline">Student Portal</a></li>
-                    <li><a href="" class="hover:underline">Tuition Payments</a></li>
-                    <li><a href="" class="hover:underline">English Language Program</a></li>
+                <ul class="mt-4 text-sm font-light space-y-1">
+                    <li><a href="" class="hover:underline">{{ __("Open LMS") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("E-mail Login") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Student Portal") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Tuition Payments") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("English Language Program") }}</a></li>
                 </ul>
             </div>
 
             <div class="col-span-4 md:col-span-2 lg:col-span-1">
                 <div class="text-lg font-semibold tracking-wide">{{ __("Policies") }}</div>
-                <ul class="mt-4 text-sm font-light">
-                    <li><a href="" class="hover:underline">Accessibility Policy</a></li>
-                    <li><a href="" class="hover:underline">Campus Safety</a></li>
-                    <li><a href="" class="hover:underline">Code of Ethics</a></li>
-                    <li><a href="" class="hover:underline">FERPA</a></li>
-                    <li><a href="" class="hover:underline">Equal Employment</a></li>
-                    <li><a href="" class="hover:underline">Terms and Conditions</a></li>
-                    <li><a href="" class="hover:underline">Privacy Policy</a></li>
+                <ul class="mt-4 text-sm font-light space-y-1">
+                    <li><a href="" class="hover:underline">{{ __("Accessibility Policy") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Campus Safety") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Code of Ethics") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("FERPA") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Equal Employment") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Terms and Conditions") }}</a></li>
+                    <li><a href="" class="hover:underline">{{ __("Privacy Policy") }}</a></li>
                 </ul>
             </div>
 
-            <div class="col-span-4 border-t border-t-white/30 py-2 text-white text-center text-sm font-light">
-                © {{date('Y')}} URBE University | All Rights Reserved.
+            <div class="col-span-4 border-t border-t-white/30 pt-6 text-white text-center text-sm font-light">
+                © {{date('Y')}} URBE University | {{ __("All Rights Reserved") }}.
             </div>
         </div>
     </div>

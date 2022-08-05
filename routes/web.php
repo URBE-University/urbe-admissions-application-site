@@ -34,6 +34,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/applications/{application}/show', App\Http\Livewire\Admin\Applications\Show::class)->name('applications.show');
 
     /**
+     * Application Download as PDF
+     */
+    Route::get('/applications/{application}/download', [ApplicationController::class, 'download'])->name('application.download');
+
+    /**
      * Syncronize application with Stars Campus
      * Creates a lead resource in the Stars Campus software
      */
@@ -43,5 +48,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
      * Application Settings
      */
     Route::get('/settings', App\Http\Livewire\System\Settings::class)->name('settings');
+
 
 });

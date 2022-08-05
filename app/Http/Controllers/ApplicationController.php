@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\ApplicationCompleted;
 use App\Models\Application;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Http\Response;
+use Spatie\Browsershot\Browsershot;
+use App\Events\ApplicationCompleted;
+use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
 {
@@ -98,5 +100,20 @@ class ApplicationController extends Controller
         return view('web.application.completed', [
             'uuid' => $application->uuid,
         ]);
+    }
+
+    /**
+     * Download completed application
+     */
+    public function download(Application $application)
+    {
+        $html = view('pdf.signed-application', ['application' => $application])->render();
+        $pdf = BrowserShot::html($html)
+            ->format('Letter')
+            ->showBackground()
+            ->margins(15, 15, 24, 15)
+            ->pdf();
+        header('Content-Type: application/pdf');
+        echo $pdf;
     }
 }
