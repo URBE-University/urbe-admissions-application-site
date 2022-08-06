@@ -47,7 +47,6 @@ class Sign extends Component
                 'applicant_acknowledgement' => Carbon::now(),
                 'applicant_verification_code' => $applicant_code,
                 'applicant_verification_ip' => request()->getClientIp(),
-                'applicant_verification' => Carbon::now(),
             ]);
             Mail::to($this->application->email)->send(new SendApplicantValidationCode($applicant_code));
 
@@ -79,7 +78,8 @@ class Sign extends Component
             try {
                 $this->application->update([
                     'step' => $this->application->step + 1,
-                    'applicant_signature' => Carbon::now(),
+                    'applicant_verification' => Carbon::now(),
+                    'applicant_signature' => Carbon::now()->addMinute(),
                     'applicant_signature_ip' => request()->getClientIp(),
                 ]);
             } catch (\Throwable $th) {
