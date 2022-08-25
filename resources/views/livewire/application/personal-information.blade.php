@@ -2,7 +2,7 @@
     <div class="grid grid-cols-3 gap-4">
         <div class="col-span-3">
             <div class="flex items-center justify-between">
-                <h2 class="text-3xl font-bold text-slate-800">{{__("Personal Information")}}</h2>
+                <h2 class="text-3xl font-bold text-[#073260]">{{__("Personal Information")}}</h2>
                 <img src="{{ asset('urbe-logo.svg') }}" alt="URBE University logo" class="w-32">
             </div>
             <div class="my-6 w-full border-t border-slate-200"></div>

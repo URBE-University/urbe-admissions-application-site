@@ -15,12 +15,14 @@
     </head>
     <body class="font-sans antialiased">
 
-        <main class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <main class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             @yield('content')
         </main>
 
-        @stack('modals')
+        {{-- Contact Bubble --}}
+        @include('partials.help')
 
+        @stack('modals')
         @livewireScripts
     </body>
 </html>

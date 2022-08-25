@@ -1,4 +1,4 @@
-<option data-countryCode="US" value="1">USA (+1)</option>
+<option data-countryCode="US_CA" value="1">USA / Canada (+1)</option>
 <option data-countryCode="GB" value="44">UK (+44)</option>
 <optgroup label="Other countries">
     <option data-countryCode="DZ" value="213">Algeria (+213)</option>
@@ -32,7 +32,6 @@
     <option data-countryCode="BI" value="257">Burundi (+257)</option>
     <option data-countryCode="KH" value="855">Cambodia (+855)</option>
     <option data-countryCode="CM" value="237">Cameroon (+237)</option>
-    <option data-countryCode="CA" value="1">Canada (+1)</option>
     <option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
     <option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
     <option data-countryCode="CF" value="236">Central African Republic (+236)</option>
@@ -202,7 +201,6 @@
     <option data-countryCode="UA" value="380">Ukraine (+380)</option>
     <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
     <option data-countryCode="UY" value="598">Uruguay (+598)</option>
-    <!-- <option data-countryCode="US" value="1">USA (+1)</option> -->
     <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
     <option data-countryCode="VU" value="678">Vanuatu (+678)</option>
     <option data-countryCode="VA" value="379">Vatican City (+379)</option>
