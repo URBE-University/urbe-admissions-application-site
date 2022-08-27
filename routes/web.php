@@ -11,7 +11,9 @@ Route::get('/application-not-found', [ApplicationController::class, 'not_found']
 Route::get('/application-saved', [ApplicationController::class, 'saved'])->name('application.saved');
 Route::get('/application-completed/{application}', [ApplicationController::class, 'completed'])->name('application.completed');
 
-
+Route::get('/guardian-success', function () {
+    return view('web.guardian-success');
+});
 
 
 /**

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Spatie\Browsershot\Browsershot;
 use App\Events\ApplicationCompleted;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
@@ -93,8 +94,19 @@ class ApplicationController extends Controller
     {
         $application = Application::where('uuid', $application)->first();
 
-        // Send completion confirmation to applicant and admissions
-        event(new ApplicationCompleted($application));
+        try {
+            // Send completion confirmation to applicant and admissions
+            if (!$application->completed_at) {
+                event(new ApplicationCompleted($application));
+            }
+
+            // Mark application as completed
+            $application->update([
+                'completed_at' => Carbon::now(),
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
 
         // Return completion view
         return view('web.application.completed', [

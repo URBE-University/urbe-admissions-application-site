@@ -205,10 +205,10 @@
 
     <div class="mt-24"></div>
 
-    <div class="grid grid-cols-3 gap-4 bg-red-100 p-4">
+    <div class="grid grid-cols-3 gap-4 bg-red-200 p-8 rounded-md">
         @if (!$application->applicant_verification_code)
             <div class="col-span-1 col-start-2">
-                <div class="w-full text-justify mt-1 text-base border-l-2 border-red-600 pl-2 text-slate-600">
+                <div class="w-full text-justify mt-1 text-base border-l-2 border-red-600 pl-2 text-red-600">
                     <label for="acknowledgement">
                         <input type="checkbox" id="acknowledgement" wire:model="acknowledgement">
                         <span>{{__("I hereby acknowledge that I have read and understand the application above.")}}</span>
@@ -216,12 +216,12 @@
                 </div>
 
                 <div class="mt-8">
-                    <x-jet-label for="name" value="{{__('Please enter your full name')}}" />
+                    <x-jet-label for="name" value="{{__('Please enter your full name *')}}" />
                     <x-jet-input type="text" id="name" wire:model="name" class="w-full mt-1"/>
                 </div>
 
                 <div class="mt-4">
-                    <x-jet-label for="email" value="{{__('Please enter your email')}}" />
+                    <x-jet-label for="email" value="{{__('Please enter your email *')}}" />
                     <x-jet-input type="email" id="email" wire:model="email" class="w-full mt-1"/>
                 </div>
 

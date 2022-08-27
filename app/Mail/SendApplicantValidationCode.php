@@ -30,6 +30,7 @@ class SendApplicantValidationCode extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.send-applicant-validation-code');
+        return $this->markdown('mail.send-applicant-validation-code')
+            ->subject("Verification code - URBE University Admissions Application");
     }
 }

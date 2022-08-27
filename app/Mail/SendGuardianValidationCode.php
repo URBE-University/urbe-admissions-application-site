@@ -30,6 +30,7 @@ class SendGuardianValidationCode extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.send-guardian-validation-code');
+        return $this->markdown('mail.send-guardian-validation-code')
+        ->subject("Verification code - URBE University Admissions Application");
     }
 }

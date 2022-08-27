@@ -9,15 +9,15 @@
         </div>
 
         <div class="col-span-3 mx-auto text-center">
-            <img src="{{asset('undraw_happy_news_re_tsbd.svg')}}" alt="{{__("One more step image")}}" class="mx-auto">
-            <h1 class="mt-4 text-4xl font-black tracking-wide">
+            <img src="{{asset('undraw_happy_news_re_tsbd.svg')}}" alt="{{__("One more step image")}}" class="mx-auto w-1/3">
+            <h1 class="mt-8 text-5xl font-black text-[#073260] tracking-wide">
                 {{__("You made it!")}}
             </h1>
-            <p class="mt-4 text-2xl font-semibold">
+            <p class="mt-4 text-2xl text-[#073260] font-semibold">
                 {{__("Your application is now ready to be submitted.")}}
             </p>
 
-            <p class="mt-6 text-lg font-base">
+            <p class="mt-6 text-lg font-base text-slate-800">
                 {!! __("In the next step, we will process your <b>non-refundable</b> application payment. If you do not have a card with you at the moment, you can skip this step by clicking the 'Skip Payment' button to submit your application without payment.") !!}
             </p>
 

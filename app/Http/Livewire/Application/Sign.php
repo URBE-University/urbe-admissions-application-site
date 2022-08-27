@@ -13,7 +13,7 @@ use Carbon\Carbon;
 
 class Sign extends Component
 {
-    public $uuid, $application, $acknowledgement, $name, $email, $code;
+    public $uuid, $application, $acknowledgement, $name, $email, $code, $guardian;
 
     public function mount()
     {
@@ -21,6 +21,7 @@ class Sign extends Component
             return redirect()->to('/');
         }
         $this->application = Application::where('uuid', $this->uuid)->first();
+        $this->guardian = request('guardian') ?? null;
     }
 
     public function sendCode()
@@ -69,21 +70,43 @@ class Sign extends Component
 
     public function sign()
     {
-        $this->validate([
-            'code' => ['required']
-        ]);
+        // Legal Guardian Signature
+        // Creates early return to redirect guardian to a different URL, once application has been digitally signed.
+        if ( $this->guardian && $this->guardian === $this->application->legal_guardian_email ) {
+            $this->validate([
+                'code' => 'required|exists:applications,legal_guardian_verification_code'
+            ]);
+            if ($this->code === $this->application->legal_guardian_verification_code) {
+                try {
+                    $this->application->update([
+                        'legal_guardian_verification' => Carbon::now(),
+                        'legal_guardian_signature' => Carbon::now()->addSeconds(30),
+                        'legal_guardian_signature_ip' => request()->getClientIp(),
+                    ]);
+                } catch (\Throwable $th) {
+                    Log::error($th);
+                }
+                // Early return with success code.
+                return redirect()->to('/guardian-success');
+            }
+        }
 
-        // Check if the code is valid
-        if ($this->code === $this->application->applicant_verification_code) {
-            try {
-                $this->application->update([
-                    'step' => $this->application->step + 1,
-                    'applicant_verification' => Carbon::now(),
-                    'applicant_signature' => Carbon::now()->addMinute(),
-                    'applicant_signature_ip' => request()->getClientIp(),
-                ]);
-            } catch (\Throwable $th) {
-                Log::error($th);
+        // Applicant Signature
+        if (!$this->guardian) {
+            $this->validate([
+                'code' => 'required|exists:applications,applicant_verification_code'
+            ]);
+            if ($this->code === $this->application->applicant_verification_code) {
+                try {
+                    $this->application->update([
+                        'step' => $this->application->step + 1,
+                        'applicant_verification' => Carbon::now(),
+                        'applicant_signature' => Carbon::now()->addMinute(),
+                        'applicant_signature_ip' => request()->getClientIp(),
+                    ]);
+                } catch (\Throwable $th) {
+                    Log::error($th);
+                }
             }
             return redirect()->to('/start?application_id=' . $this->uuid);
         }

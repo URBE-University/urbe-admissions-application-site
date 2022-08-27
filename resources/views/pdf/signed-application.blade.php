@@ -61,7 +61,7 @@
     <body>
         <div class="container">
             <div class="head">
-                <img src="https://urbe.university/wp-content/uploads/2019/01/urbe-white-logo.jpg" alt="URBE University" style="width: 11rem; margin-left: auto; margin-right: auto; display: block">
+                <img src="https://admissions.urbe.university/wp-content/uploads/2019/04/logo-urbe-university.png" alt="URBE University" style="width: 14rem; margin-left: auto; margin-right: auto; display: block">
                 <div style="margin-top: 1rem">{!!__("11430 NW 20<sup>th</sup> St. Suite 150 Sweetwater, Florida. 33172")!!}</div>
                 <div style="margin-top: .5rem; font-weight:800; text-transform:uppercase; font-size: 1.5rem">{{__("Application for admission")}}</div>
                 <p>{{ $application->uuid }}</p>
@@ -267,7 +267,7 @@
 
         {{-- Page 2 - Audit Trail --}}
         <div style="display: flex; align-items: center; justify-content: space-between">
-            <h1 style="font-size: 2rem">Audit trail</h1>
+            <h1 style="font-size: 2rem">Applicant Audit trail</h1>
             <p>Application ID: {{ $application->uuid }}</p>
         </div>
 
@@ -295,6 +295,32 @@
                 <div class="">{{ $application->applicant_name . __(" signed he document from IP: ") . $application->applicant_signature_ip . __(" using code ") . $application->applicant_verification_code }}</div>
                 <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->applicant_signature)->format("m/d/Y h:i:s a") }}</div>
             </div>
+
+            {{-- Legal Guardian Audit Section --}}
+
+            @if ($application->legal_guardian_name && $application->legal_guardian_email)
+                <div style="margin-top: 2rem">
+                    <h1 style="font-size: 2rem">Legal Guardian Audit trail</h1>
+                </div>
+
+                <div class="audit-item">
+                    <div class="">✅ Validation code sent</div>
+                    <div class="">{{ __("Validation code sent to ") . $application->legal_guardian_name . '`s email ' . $application->legal_guardian_email }}</div>
+                    <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->applicant_acknowledgement)->format("m/d/Y h:i:s a") }}</div>
+                </div>
+
+                <div class="audit-item">
+                    <div class="">✅ Identity validated</div>
+                    <div class="">{{ $application->legal_guardian_name . __(" Validated his/her/its identity using the code sent via email. ") }}</div>
+                    <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->legal_guardian_verification)->format("m/d/Y h:i:s a") }}</div>
+                </div>
+
+                <div class="audit-item">
+                    <div class="">✅ Application signed and finalized</div>
+                    <div class="">{{ $application->legal_guardian_name . __(" signed he document from IP: ") . $application->legal_guardian_signature_ip . __(" using code ") . $application->legal_guardian_verification_code }}</div>
+                    <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") }}</div>
+                </div>
+            @endif
 
             <div style="margin-top: 2rem">
                 <p>This document has been electronically signed using unique timestamp identifiers, by URBE University Admissions Applications Platform: <a href="https://admissions.urbe.university">https://admissions.urbe.university</a></p>
