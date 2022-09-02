@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         @vite('resources/css/app.css')
         @livewireStyles
-        @vite('resources/js/app.js')
     </head>
     <body class="font-sans antialiased">
 
@@ -23,6 +22,7 @@
         @include('partials.help')
 
         @stack('modals')
+        @vite('resources/js/app.js')
         @livewireScripts
     </body>
 </html>

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
 {
-    public $form_step_text;
+    public $form_step_text = 'contact-information';
 
     public function index(Request $request)
     {
@@ -67,9 +67,8 @@ class ApplicationController extends Controller
                     $this->form_step_text = 'contact-information';
                     break;
             }
-        } else {
-            $this->form_step_text = 'contact-information';
         }
+
         return view('web.application.application', [
             'form_step_text' => $this->form_step_text,
             'form_step_number' => $application->step ?? 1,

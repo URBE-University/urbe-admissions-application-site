@@ -23,7 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     /**
      * Dashboard
      */
-    Route::get('/dashboard', function() {return view('dashboard');})->name('dashboard');
+    // Route::get('/dashboard', function() {return view('dashboard');})->name('dashboard');
 
     /**
      * List all the applications

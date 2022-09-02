@@ -36,7 +36,7 @@ class ContactInformation extends Component
             'first_name' => 'required',
             'last_name' => 'required',
             'prev_name_q' => 'required',
-            'email' => 'required|confirmed',
+            'email' => 'required|confirmed|email:dns',
             'phone' => 'required',
             'phone_code' => 'required',
             'street' => 'required',

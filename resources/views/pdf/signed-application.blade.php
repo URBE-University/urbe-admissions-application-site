@@ -215,7 +215,7 @@
             <div class="" style="grid-column: span 1 / span 1">
                 <div class="field-container" style="border-bottom: 1px solid #555e6d">
                     <span class="field-label">{{__("Date:")}}</span>
-                    <span style="margin-left: .6rem">{{ ($application->applicant_signature) ? date('m/d/Y', strtotime($application->applicant_signature)) : ''}}</span>
+                    <span style="margin-left: .6rem">{{ ($application->applicant_signature) ? date('m-d-Y h:i:s a', strtotime($application->applicant_signature)) : ''}}</span>
                 </div>
             </div>
 
@@ -234,7 +234,7 @@
             <div class="" style="grid-column: span 1 / span 1">
                 <div class="field-container" style="border-bottom: 1px solid #555e6d">
                     <span class="field-label">{{__("Date:")}}</span>
-                    <span style="margin-left: .6rem">{{ ($application->legal_guardian_signature) ? date('m/d/Y', strtotime($application->legal_guardian_signature)) : ''}}</span>
+                    <span style="margin-left: .6rem">{{ ($application->legal_guardian_signature) ? date('m-d-Y h:i:s a', strtotime($application->legal_guardian_signature)) : ''}}</span>
                 </div>
             </div>
 
