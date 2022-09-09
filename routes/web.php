@@ -15,16 +15,10 @@ Route::get('/guardian-success', function () {
     return view('web.guardian-success');
 });
 
-
 /**
  * Authenticated routes
  */
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
-    /**
-     * Dashboard
-     */
-    // Route::get('/dashboard', function() {return view('dashboard');})->name('dashboard');
-
     /**
      * List all the applications
      */
@@ -50,6 +44,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
      * Application Settings
      */
     Route::get('/settings', App\Http\Livewire\System\Settings::class)->name('settings');
-
-
 });
