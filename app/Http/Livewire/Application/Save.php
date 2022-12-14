@@ -13,15 +13,14 @@ class Save extends Component
 
     public function mount()
     {
-        $this->application_email = Application::find($this->application)->email;
-        $this->application_uuid = Application::find($this->application)->uuid;
+        $this->application_email = Application::findorfail($this->application)->email;
+        $this->application_uuid = Application::findorfail($this->application)->uuid;
     }
 
     public function save()
     {
         $url = config('app.url') . '/start?application_id=' . $this->application_uuid;
         Mail::to($this->application_email)->send(new SendApplicationNotification($url));
-
         return redirect()->route('application.saved');
     }
 
