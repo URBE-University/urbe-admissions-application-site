@@ -215,7 +215,7 @@
             <div class="" style="grid-column: span 2 / span 2">
                 <div class="field-container" style="border-bottom: 1px solid #555e6d">
                     <span class="field-label">{{__("Applicant Signature:")}}</span>
-                    <span class="signature" style="margin-left: .6rem">{{ $application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name  . ' [' . $application->applicant_verification_code . ']'}}</span>
+                    <span style="margin-left: .6rem; font-size: 6px"><span class="signature">{{ $application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name}}</span> {{ $application->applicant_verification_code }}</span>
                 </div>
             </div>
 
