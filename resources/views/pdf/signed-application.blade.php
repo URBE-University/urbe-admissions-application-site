@@ -61,7 +61,7 @@
     <body>
         <div class="container">
             <div class="head">
-                <img src="https://admissions.urbe.university/wp-content/uploads/2019/04/logo-urbe-university.png" alt="URBE University" style="width: 14rem; margin-left: auto; margin-right: auto; display: block">
+                <img src="https://admissions-dev.urbe.university/urbe-logo.svg" alt="URBE University" style="width: 14rem; margin-left: auto; margin-right: auto; display: block">
                 <div style="margin-top: 1rem">{!!__("11430 NW 20<sup>th</sup> St. Suite 150 Sweetwater, Florida. 33172")!!}</div>
                 <div style="margin-top: .5rem; font-weight:800; text-transform:uppercase; font-size: 1.5rem">{{__("Application for admission")}}</div>
                 <p>{{ $application->uuid }}</p>
