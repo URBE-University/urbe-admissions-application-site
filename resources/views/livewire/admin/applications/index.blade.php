@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <p class="font-semibold text-xl text-gray-800 leading-tight">
+        <p class="text-xl text-gray-800 leading-tight">
             {{ __('Applications') }}
         </p>
     </x-slot>

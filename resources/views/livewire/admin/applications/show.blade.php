@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <div class="flex items-center justify-between">
-            <p class="font-semibold text-xl text-gray-800 leading-tight">
+            <p class="text-xl text-gray-800 leading-tight">
                 {{ __("Application | ") . $application->uuid }}
             </p>
 
