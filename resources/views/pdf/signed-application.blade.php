@@ -215,7 +215,7 @@
             <div class="" style="grid-column: span 2 / span 2">
                 <div class="field-container" style="border-bottom: 1px solid #555e6d">
                     <span class="field-label">{{__("Applicant Signature:")}}</span>
-                    <span style="margin-left: .6rem; font-size: 8px"><span class="signature">{{ $application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name}}</span> <span style="margin-left: .6rem">{{ $application->applicant_verification_code }}</span></span>
+                    <span style="margin-left: .6rem; font-size: 8px"><span class="signature">{{ $application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name}}</span> <span style="margin-left: .6rem">sigature-{{ $application->applicant_verification_code }}</span></span>
                 </div>
             </div>
 
@@ -235,7 +235,9 @@
             <div class="" style="grid-column: span 2 / span 2">
                 <div class="field-container" style="border-bottom: 1px solid #555e6d">
                     <span class="field-label">{{__("Legal Guardian Signature:")}}</span>
-                    <span style="margin-left: .6rem">{{ ($application->legal_guardian_name) ? $application->legal_guardian_name  . ' [' . $application->legal_guardian_verification_code . ']' : '' }}</span>
+                    @if ($application->legal_guardian_name)
+                        <span style="margin-left: .6rem; font-size: 8px"><span class="signature">{{ $application->legal_guardian_name }}</span> <span style="margin-left: .6rem">sigature-{{ $application->legal_guardian_verification_code }}</span></span>
+                    @endif
                 </div>
             </div>
             <div class="" style="grid-column: span 1 / span 1">
@@ -330,7 +332,7 @@
             @endif
 
             <div style="margin-top: 2rem">
-                <p>This document has been electronically signed using unique timestamp identifiers, by URBE University Admissions Applications Platform: <a href="https://admissions.urbe.university">https://admissions.urbe.university</a></p>
+                <p>This document has been electronically verified and signed using unique timestamp-based identifiers, by URBE University Admissions Applications Platform: <a href="{{ config('app.url') }}">{{ config('app.url') }}</a></p>
                 <p style="font-size: 12px; font-weight:700; color: red">Please, keep this page attached to its corresponding application at all times.</p>
             </div>
         </div>
