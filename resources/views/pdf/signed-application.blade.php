@@ -333,7 +333,7 @@
 
             <div style="margin-top: 2rem">
                 <p>This document has been electronically verified and signed using unique timestamp-based identifiers, by URBE University Admissions Applications Platform: <a href="https://admissions.urbe.university">https://admissions.urbe.university</a></p>
-                <p style="font-size: 12px; font-weight:700; color: red; padding: 10px 5px 10px 10px; background-color: rgb(255, 227, 227); border-radius: 5px;">KEEP BOTH PAGES ATTACHED AT ALL TIMES</p>
+                <p style="font-size: 12px; font-weight:700; color: red; padding: 10px 5px 10px 5px; background-color: rgb(255, 227, 227); border-radius: 5px;">KEEP BOTH PAGES ATTACHED AT ALL TIMES</p>
             </div>
         </div>
     </body>
