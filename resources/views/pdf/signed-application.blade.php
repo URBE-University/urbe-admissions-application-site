@@ -8,6 +8,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
         <style>
             * {
                 font-size: 10px;
@@ -55,6 +57,10 @@
                 border-bottom: .5px solid grey;
                 padding-top: .5rem;
                 padding-bottom: .5rem;
+            }
+
+            .signature {
+                font-family: 'Caveat', cursive !important;
             }
         </style>
     </head>
@@ -208,7 +214,7 @@
             <div class="" style="grid-column: span 2 / span 2">
                 <div class="field-container" style="border-bottom: 1px solid #555e6d">
                     <span class="field-label">{{__("Applicant Signature:")}}</span>
-                    <span style="margin-left: .6rem">{{ $application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name  . ' [' . $application->applicant_verification_code . ']'}}</span>
+                    <span class="signature" style="margin-left: .6rem">{{ $application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name  . ' [' . $application->applicant_verification_code . ']'}}</span>
                 </div>
             </div>
 
