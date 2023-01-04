@@ -38,7 +38,7 @@ class PayAndSubmit extends Component
 
         return $this->application->checkout(['price_1KVi81GdZW6fMUNzksyf7rG3' => 1], [
             'success_url' => route('application.completed', ['application' => $this->uuid]),
-            'cancel_url' => route('application.start', ['/start?application_id=' . $this->uuid]),
+            'cancel_url' => route('application.start', ['application_id=' . $this->uuid]),
         ]);
     }
 

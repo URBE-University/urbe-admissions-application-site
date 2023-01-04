@@ -21,8 +21,8 @@
         {{-- Contact Bubble --}}
         @include('partials.help')
 
-        @stack('modals')
         @vite('resources/js/app.js')
+        @stack('modals')
         @livewireScripts
     </body>
 </html>

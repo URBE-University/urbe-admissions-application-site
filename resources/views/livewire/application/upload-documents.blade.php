@@ -4,7 +4,12 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h2 class="text-3xl font-bold text-slate-800">{{__("Required documents")}}</h2>
-                    <p class="mt-1 text-sm">{{__("You have 30 days from today, to submit your original documents to the University’s postal address.")}}</p>
+                    <p class="mt-1 text-sm text-amber-700 py-2 px-4 bg-amber-100 rounded-md flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                        </svg>
+                        <span>{{__("Please know that you have 30 days from today, to submit your original documents to the University’s postal address.")}}</span>
+                    </p>
                 </div>
                 <img src="{{ asset('urbe-logo.svg') }}" alt="URBE University logo" class="w-32">
             </div>
@@ -32,8 +37,12 @@
             </div>
             <div wire:loading wire:target="official_transcripts" class="mt-1 text-sm text-blue-600">{{__("Uploading...")}}</div>
             @if ($official_transcripts)
-                <div class="mt-1 text-sm text-green-600">{{__("Document ready")}}</div>
-
+                <div class="mt-1 text-sm text-green-600 bg-green-100 rounded-md inline-flex items-center space-x-3 px-3 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 014.5 2h6.879a1.5 1.5 0 011.06.44l4.122 4.12A1.5 1.5 0 0117 7.622V16.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 013 16.5v-13zm10.857 5.691a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{{__("Document ready")}}</span>
+                </div>
             @else
                 @error('official_transcripts')
                     <div class="mt-1 text-sm text-red-600">{{$message}}</div>
@@ -63,8 +72,12 @@
             </div>
             <div wire:loading wire:target="hs_bs_diploma" class="mt-1 text-sm text-blue-600">{{__("Uploading...")}}</div>
             @if ($hs_bs_diploma)
-                <div class="mt-1 text-sm text-green-600">{{__("Document ready")}}</div>
-
+                <div class="mt-1 text-sm text-green-600 bg-green-100 rounded-md inline-flex items-center space-x-3 px-3 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 014.5 2h6.879a1.5 1.5 0 011.06.44l4.122 4.12A1.5 1.5 0 0117 7.622V16.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 013 16.5v-13zm10.857 5.691a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{{__("Document ready")}}</span>
+                </div>
             @else
                 @error('hs_bs_diploma')
                     <div class="mt-1 text-sm text-red-600">{{$message}}</div>
@@ -95,8 +108,12 @@
             </div>
             <div wire:loading wire:target="id_file" class="mt-1 text-sm text-blue-600">{{__("Uploading...")}}</div>
             @if ($id_file)
-                <div class="mt-1 text-sm text-green-600">{{__("Document ready")}}</div>
-
+                <div class="mt-1 text-sm text-green-600 bg-green-100 rounded-md inline-flex items-center space-x-3 px-3 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 014.5 2h6.879a1.5 1.5 0 011.06.44l4.122 4.12A1.5 1.5 0 0117 7.622V16.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 013 16.5v-13zm10.857 5.691a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{{__("Document ready")}}</span>
+                </div>
             @else
                 @error('id_file')
                     <div class="mt-1 text-sm text-red-600">{{$message}}</div>
