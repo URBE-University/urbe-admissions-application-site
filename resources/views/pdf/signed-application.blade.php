@@ -332,7 +332,7 @@
             @endif
 
             <div style="margin-top: 2rem">
-                <p>This document has been electronically verified and signed using unique timestamp-based identifiers, by URBE University Admissions Applications Platform: <a href="{{ config('app.url') }}">{{ config('app.url') }}</a></p>
+                <p>This document has been electronically verified and signed using unique timestamp-based identifiers, by URBE University Admissions Applications Platform: <a href="https://admissions.urbe.university">https://admissions.urbe.university</a></p>
                 <p style="font-size: 12px; font-weight:700; color: red">Please, keep this page attached to its corresponding application at all times.</p>
             </div>
         </div>
