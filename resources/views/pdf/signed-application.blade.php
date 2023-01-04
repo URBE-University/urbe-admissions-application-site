@@ -273,25 +273,25 @@
 
         <div style="margin-top: 1rem">
             <div class="audit-item">
-                <div class="">✅ Application started</div>
+                <div class="">&#9745; Application started</div>
                 <div class="">{{ $application->applicant_name . __(" started the application process from the IP: ") . $application->applicant_signature_ip }}</div>
                 <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->created_at)->subMinute()->format("m/d/Y h:i:s a") }}</div>
             </div>
 
             <div class="audit-item">
-                <div class="">✅ Validation code sent</div>
+                <div class="">&#9745; Validation code sent</div>
                 <div class="">{{ $application->applicant_name . __(" requested a validation code via email to verify his/her/its identity. Code was sent to: ") . $application->applicant_email }}</div>
                 <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->applicant_acknowledgement)->format("m/d/Y h:i:s a") }}</div>
             </div>
 
             <div class="audit-item">
-                <div class="">✅ Identity validated</div>
+                <div class="">&#9745; Identity validated</div>
                 <div class="">{{ $application->applicant_name . __(" Validated his/her/its identity using the code sent via email. ") }}</div>
                 <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->applicant_verification)->format("m/d/Y h:i:s a") }}</div>
             </div>
 
             <div class="audit-item">
-                <div class="">✅ Application signed and finalized</div>
+                <div class="">&#9745; Application signed and finalized</div>
                 <div class="">{{ $application->applicant_name . __(" signed he document from IP: ") . $application->applicant_signature_ip . __(" using code ") . $application->applicant_verification_code }}</div>
                 <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->applicant_signature)->format("m/d/Y h:i:s a") }}</div>
             </div>
@@ -304,19 +304,19 @@
                 </div>
 
                 <div class="audit-item">
-                    <div class="">✅ Validation code sent</div>
+                    <div class="">&#9745; Validation code sent</div>
                     <div class="">{{ __("Validation code sent to ") . $application->legal_guardian_name . '`s email ' . $application->legal_guardian_email }}</div>
                     <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->applicant_acknowledgement)->format("m/d/Y h:i:s a") }}</div>
                 </div>
 
                 <div class="audit-item">
-                    <div class="">✅ Identity validated</div>
+                    <div class="">&#9745; Identity validated</div>
                     <div class="">{{ $application->legal_guardian_name . __(" Validated his/her/its identity using the code sent via email. ") }}</div>
                     <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->legal_guardian_verification)->format("m/d/Y h:i:s a") }}</div>
                 </div>
 
                 <div class="audit-item">
-                    <div class="">✅ Application signed and finalized</div>
+                    <div class="">&#9745; Application signed and finalized</div>
                     <div class="">{{ $application->legal_guardian_name . __(" signed he document from IP: ") . $application->legal_guardian_signature_ip . __(" using code ") . $application->legal_guardian_verification_code }}</div>
                     <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") }}</div>
                 </div>
