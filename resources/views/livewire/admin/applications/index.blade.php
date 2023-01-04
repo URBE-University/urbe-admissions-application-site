@@ -1,8 +1,8 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <p class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Applications') }}
-        </h2>
+        </p>
     </x-slot>
 
     <div class="py-12">

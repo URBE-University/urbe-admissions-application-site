@@ -1,9 +1,9 @@
 <div>
     <x-slot name="header">
         <div class="flex items-center justify-between">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <p class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __("Application | ") . $application->uuid }}
-            </h2>
+            </p>
 
             <div class="">
                 @if ($application->applicant_signature && $application->applicant_signature_ip)
