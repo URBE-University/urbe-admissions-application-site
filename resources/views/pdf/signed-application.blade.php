@@ -61,6 +61,7 @@
 
             .signature {
                 font-family: 'Caveat', cursive !important;
+                font-size: 14px;
             }
         </style>
     </head>
