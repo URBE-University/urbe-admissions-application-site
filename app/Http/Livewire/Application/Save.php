@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 
 class Save extends Component
 {
-    public $saveApplicationModal, $application;
+    public $saveApplicationModal, $application, $application_email, $application_uuid;
 
     public function mount()
     {

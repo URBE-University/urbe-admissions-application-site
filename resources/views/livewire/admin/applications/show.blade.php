@@ -1,26 +1,52 @@
 <div>
-    <x-slot name="header">
-        <div class="flex items-center justify-between">
-            <p class="text-xl text-gray-800 leading-tight">
-                {{ __("Application | ") . $application->uuid }}
-            </p>
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <p class="text-xl text-gray-800 leading-tight">
+                    {{ __("Application | ") . $application->uuid }}
+                </p>
 
-            <div class="">
-                @if ($application->applicant_signature && $application->applicant_signature_ip)
-                    <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">{{__("Ready")}}</span>
-                @else
-                    <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-red-100 text-red-600">{{__("In progress")}}</span>
-                @endif
-                @if ($application->received_payment)
-                    <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">{{__("Paid")}}</span>
-                @else
-                    <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-red-100 text-red-600">{{__("Unpaid")}}</span>
-                @endif
+                <div class="flex items-center space-x-3">
+                    @if ($application->applicant_signature && $application->applicant_signature_ip)
+                        <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">{{__("Ready")}}</span>
+                    @else
+                        <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-red-100 text-red-600">{{__("In progress")}}</span>
+                    @endif
+                    @if ($application->received_payment)
+                        <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">{{__("Paid")}}</span>
+                    @else
+                        <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-red-100 text-red-600">{{__("Unpaid")}}</span>
+                    @endif
 
-                <a href="{{ route('application.download', ['application' => $application->id]) }}" target="_blank" class="ml-4 text-sm font-semibold px-5 py-2 rounded-full bg-slate-200">Download Application</a>
+
+                    <x-jet-dropdown>
+                        <x-slot name="trigger">
+                            <button class="text-sm font-semibold px-5 py-2 rounded-full bg-slate-200">
+                                Options
+                            </button>
+                        </x-slot>
+                        <x-slot name="content" class="text-left">
+                            <a href="{{ route('application.download', ['application' => $application->id]) }}"
+                                target="_blank"
+                                class="text-left block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition"
+                            >Download Application</a>
+                            @if (!$application->completed_at)
+                                <button wire:click="sendApplicationLink"
+                                    class="text-left block w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition"
+                                >Send Application Link</button>
+                            @endif
+                            @if (!$application->received_payment)
+                                <button wire:click="markPaid"
+                                    class="text-left block w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition"
+                                >Mark as Paid</button>
+                            @endif
+                            {{-- block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition --}}
+                        </x-slot>
+                    </x-jet-dropdown>
+                </div>
             </div>
         </div>
-    </x-slot>
+    </header>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

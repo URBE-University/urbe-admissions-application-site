@@ -4,7 +4,9 @@ namespace App\Http\Livewire\Admin\Applications;
 
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\SendApplicationNotification;
 
 class Show extends Component
 {
@@ -13,6 +15,21 @@ class Show extends Component
     public function mount(Application $application)
     {
         $this->application = $application;
+    }
+
+    public function sendApplicationLink()
+    {
+        $url = config('app.url') . '/start?application_id=' . $this->application->application_uuid;
+        Mail::to($this->application->application_email)->send(new SendApplicationNotification($url));
+        return redirect()->route('applications.show', ['application' => $this->application->id]);
+    }
+
+    public function markPaid()
+    {
+        $this->application->update([
+            'received_payment' => 1
+        ]);
+        return redirect()->route('applications.show', ['application' => $this->application->id]);
     }
 
     public function downloadResume()
