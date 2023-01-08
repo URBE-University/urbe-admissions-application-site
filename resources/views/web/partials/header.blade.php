@@ -8,7 +8,8 @@
                 </div>
                 <div class="mt-10 flex items-center justify-center md:justify-start gap-6">
                     <a  href="{{ route('application.start') }}" class="apply-btn">{{ __("Apply Now") }}</a>
-                    <a href="" class="font-medium">Talk to admissions</a>
+                    <a  target="_blank" href="https://outlook.office365.com/owa/calendar/MeetwithURBEUniversity@urbe.university/bookings/s/V--khBDgG0qSCQI80T7Nyw2"
+                        class="font-medium">Talk to admissions</a>
                 </div>
             </div>
             <div class="col-span-2 md:col-span-1">
