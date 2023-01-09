@@ -91,7 +91,7 @@ class ContactDetails extends Component
             Log::error($th);
         }
 
-        return redirect()->to('/start?application_id=' . $this->application->uuid);
+        return redirect()->to( '/' . app()->getLocale() . '/start?application_id=' . $this->application->uuid);
     }
 
     public function render()

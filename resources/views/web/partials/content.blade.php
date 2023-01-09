@@ -36,7 +36,7 @@
                     <p class="mt-3 text-lg">Once you have all the necessary documents and information, start by completing your online application to URBE University.</p>
                 </div>
                 <div class="mt-8">
-                    <a href="{{ route('application.start') }}" class="px-6 py-3 font-medium rounded-xl bg-sky-500 text-white transition-all outline-0">{{ __("Apply Now") }}</a>
+                    <a href="{{ route('application.start', app()->getLocale()) }}" class="px-6 py-3 font-medium rounded-xl bg-sky-500 text-white transition-all outline-0">{{ __("Apply Now") }}</a>
                 </div>
             </div>
 

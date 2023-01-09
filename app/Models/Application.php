@@ -14,6 +14,10 @@ class Application extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'completed_at' => 'datetime'
+    ];
+
     /**
      * The "booted" method of the model.
      *

@@ -89,7 +89,7 @@ class ApplicationController extends Controller
     /**
      * Process application completion
      */
-    public function completed($application)
+    public function completed($language, $application)
     {
         $application = Application::where('uuid', $application)->first();
 

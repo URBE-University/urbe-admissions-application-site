@@ -70,7 +70,7 @@ class ContactInformation extends Component
             Log::error($th);
         }
 
-        return redirect()->to('/start?application_id=' . $uuid);
+        return redirect()->to( '/' . app()->getLocale() . '/start?application_id=' . $uuid);
     }
 
 

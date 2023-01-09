@@ -56,7 +56,7 @@ class EducationBackground extends Component
             Log::error($th);
         }
 
-        return redirect()->to('/start?application_id=' . $this->uuid);
+        return redirect()->to( '/' . app()->getLocale() . '/start?application_id=' . $this->uuid);
     }
 
 

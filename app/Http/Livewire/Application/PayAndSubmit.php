@@ -37,8 +37,8 @@ class PayAndSubmit extends Component
         ]);
 
         return $this->application->checkout([config('internal.application.product') => 1], [
-            'success_url' => route('application.completed', ['application' => $this->uuid]),
-            'cancel_url' => route('application.start', ['application_id=' . $this->uuid]),
+            'success_url' => route('application.completed', ['language' => app()->getLocale(), 'application' => $this->uuid]),
+            'cancel_url' => route('application.start', ['language' => app()->getLocale(), 'application_id=' . $this->uuid]),
         ]);
     }
 
