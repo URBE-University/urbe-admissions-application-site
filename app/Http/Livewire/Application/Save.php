@@ -21,7 +21,7 @@ class Save extends Component
     {
         $url = config('app.url') . '/start?application_id=' . $this->application_uuid;
         Mail::to($this->application_email)->send(new SendApplicationNotification($url));
-        return redirect()->route('application.saved');
+        return redirect()->route('application.saved', ['language' => app()->getLocale()]);
     }
 
     public function render()

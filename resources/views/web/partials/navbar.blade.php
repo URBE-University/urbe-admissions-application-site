@@ -8,8 +8,9 @@
             </div>
 
             {{-- Apply Now button --}}
-            <div class="hidden sm:block">
-                <a  href="{{ route('application.start', app()->getLocale()) }}" class="apply-btn">{{ __("Apply Now") }}</a>
+            <div class="flex items-center space-x-6">
+                @livewire('lang-switcher')
+                <a  href="{{ route('application.start', app()->getLocale()) }}" class="hidden sm:block apply-btn">{{ __("Apply Now") }}</a>
             </div>
         </div>
     </div>

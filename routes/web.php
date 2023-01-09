@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/en');
 
-Route::prefix('{language}')->group(function () {
+Route::middleware('set.language')->prefix('{language}')->group(function () {
     Route::get('/', [WebController::class, 'home'])->name('home');
     Route::get('/start', [ApplicationController::class, 'index'])->name('application.start');
     Route::get('/application-not-found', [ApplicationController::class, 'not_found'])->name('application.not_found');

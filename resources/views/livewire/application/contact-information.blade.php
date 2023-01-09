@@ -116,7 +116,7 @@
         <div class="col-span-3">
             <div class="grid grid-cols-2 gap-4">
                 <div class="col-span-2 sm:col-span-1">
-                    <label for="city" class="block text-sm font-semibold text-slate-800">{{__("City")}} <span class="text-red-600 font-bold">*</span></label>
+                    <label for="city" class="block text-sm font-semibold text-slate-800">{{__("City/Municipality")}} <span class="text-red-600 font-bold">*</span></label>
                     <input type="text" id="city" wire:model="city" class="mt-1 w-full">
                     @error('city')
                         <span class="text-sm text-red-600">{{$message}}</span>
