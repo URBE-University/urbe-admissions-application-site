@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Application;
 
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\App;
 
 class PayAndSubmit extends Component
 {
@@ -37,6 +38,7 @@ class PayAndSubmit extends Component
         ]);
 
         return $this->application->checkout([config('internal.application.product') => 1], [
+            'locale' => App::getLocale(),
             'success_url' => route('application.completed', ['language' => app()->getLocale(), 'application' => $this->uuid]),
             'cancel_url' => route('application.start', ['language' => app()->getLocale(), 'application_id=' . $this->uuid]),
         ]);

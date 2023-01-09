@@ -17,7 +17,7 @@
                 {{__("Your application is now ready to be submitted.")}}
             </p>
 
-            <p class="mt-6 text-lg font-base text-slate-800">
+            <p class="mt-6 font-base text-slate-800">
                 {!! __("In the next step, we will process your <b>non-refundable</b> application payment. If you do not have a card with you at the moment, you can skip this step by clicking the 'Skip Payment' button to submit your application without payment.") !!}
             </p>
 

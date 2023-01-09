@@ -26,7 +26,7 @@ class PersonalInformation extends Component
             'ethnicity' => 'required',
             'gender' => 'required',
             'dob' => 'required|date',
-            'ssn' => 'required',
+            'ssn' => 'required|min:4|max:4',
             'us_resident' => 'required',
             'dl_passport' => 'required',
             'military' => 'required',

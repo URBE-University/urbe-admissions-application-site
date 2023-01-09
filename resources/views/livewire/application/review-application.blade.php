@@ -105,7 +105,7 @@
         {{-- Personal Information --}}
         <div class="mt-6 col-span-3">
             <div class="flex items-center justify-between">
-                <p class="font-base">{{__("Personal information")}}</p>
+                <p class="font-base">{{__("Personal Information")}}</p>
                 @livewire('application.edit.personal-information', ['uuid' => $application->uuid])
             </div>
             <div class="mt-2 bg-white rounded-lg shadow">
@@ -115,7 +115,7 @@
                 </div>
                 <div class="border-t border-slate-200"></div>
                 <div class="grid grid-cols-3 gap-1 sm:gap-4 p-4">
-                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("SSN (last 4)")}}</div>
+                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("SSN (last four digits)")}}</div>
                     <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">******{{ Str::substr(Crypt::decryptString($application->ssn), -4) }}</div>
                 </div>
                 <div class="border-t border-slate-200"></div>
@@ -148,10 +148,6 @@
                 @livewire('application.edit.program-of-interest', ['uuid' => $application->uuid])
             </div>
             <div class="mt-2 bg-white rounded-lg shadow">
-                <div class="rounded-t rounded-lg grid grid-cols-3 gap-1 sm:gap-4 p-4">
-                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("What is your highest education level?")}}</div>
-                    <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">{{$application->education_level}}</div>
-                </div>
                 <div class="border-t border-slate-200"></div>
                 <div class="grid grid-cols-3 gap-1 sm:gap-4 p-4">
                     <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("Applying for")}}</div>
@@ -159,7 +155,7 @@
                 </div>
                 <div class="border-t border-slate-200"></div>
                 <div class="grid grid-cols-3 gap-1 sm:gap-4 p-4">
-                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("Academic Program")}}</div>
+                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("Academic program")}}</div>
                     <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">{{$application->program}}</div>
                 </div>
                 <div class="border-t border-slate-200"></div>
@@ -243,7 +239,7 @@
             <div class="mt-2 bg-white rounded-lg shadow">
                 <div class="rounded-t rounded-lg grid grid-cols-3 gap-1 sm:gap-4 p-4">
                     <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("Employer name")}}</div>
-                    <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">{{$application->employer_name ?? 'currently unemployed'}}</div>
+                    <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">{{$application->employer_name ?? __('currently unemployed')}}</div>
                 </div>
                 <div class="border-t border-slate-200"></div>
                 <div class="rounded-t rounded-lg grid grid-cols-3 gap-1 sm:gap-4 p-4">
@@ -318,7 +314,7 @@
                 </div>
                 <div class="border-t border-slate-200"></div>
                 <div class="rounded-b rounded-lg grid grid-cols-3 gap-1 sm:gap-4 p-4">
-                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("Driver's license/ID")}}</div>
+                    <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("Driver's license / Passport")}}</div>
                     <div class="col-span-3 sm:col-span-2 text-sm text-gray-900 py-3 px-4 border rounded-lg">
                         @if ($application->id_url)
                             <div class="flex items-center justify-between">

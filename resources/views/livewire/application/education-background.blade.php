@@ -102,7 +102,7 @@
         <div class="mt-6 col-span-3 sm:col-span-1">
             <label for="degree_earned" class="block text-sm font-semibold text-slate-800">{{__("Degree earned")}}</label>
             <select name="degree_earned" id="degree_earned" wire:model="degree_earned" class="mt-1 w-full">
-                <option value="" selected="selected" class="gf_placeholder">Select</option>
+                <option value="" selected="selected" class="gf_placeholder">{{__("Select")}}</option>
                 <option value="Associate Degree in Nursing">Associate Degree in Nursing</option>
                 <option value="Associate in General Studies">Associate in General Studies</option>
                 <option value="Associate in Occupational Studies">Associate in Occupational Studies</option>

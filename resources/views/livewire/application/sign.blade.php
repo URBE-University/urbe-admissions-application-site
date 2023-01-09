@@ -246,7 +246,7 @@
 
                 <div class="mt-4">
                     <x-jet-danger-button type="submit" wire:click="sign">
-                        {{__("Sign Application")}}
+                        {{__("Sign application")}}
                     </x-jet-danger-button>
                 </div>
             </div>

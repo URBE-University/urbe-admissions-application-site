@@ -13,12 +13,12 @@
             </div>
         </x-slot>
         <x-slot name="content">
-            <p>{!!__("We will send you an email to <span class='underline text-blue-600'>" . $application_email . "</span> with a link, that you can use to continue your application.")!!}</p>
+            <p>{!!__("We will save your application and send you an email with a link that you can use to continue later.")!!}</p>
             <p class="mt-1 text-red-600">{{__("Please notice that only progress made until this point will be saved. When you come back, you will need to complete this page again.")}}</p>
         </x-slot>
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$toggle('saveApplicationModal')">
-                {{__("Nevermind")}}
+                {{__("Cancel")}}
             </x-jet-secondary-button>
             <x-jet-button class="ml-2" wire:click="save">
                 {{__("Save application")}}

@@ -11,7 +11,7 @@
         <div class="col-span-3">
             <label for="gender" class="block text-sm font-semibold text-slate-800">{{__("Gender")}} <span class="text-red-600 font-bold">*</span></label>
             <select id="gender" wire:model="gender" class="mt-1 w-full">
-                <option selected="selected" >-- select one --</option>
+                <option selected="selected" >-- {{ __("select one") }} --</option>
                 <option value="female">{{__("Female")}}</option>
                 <option value="male">{{__("Male")}}</option>
                 <option value="non-binary">{{__("Non binary")}}</option>
@@ -25,7 +25,7 @@
         <div class="mt-6 col-span-3">
             <label for="ethnicity" class="block text-sm font-semibold text-slate-800">{{__("Ethnicity")}} <span class="text-red-600 font-bold">*</span></label>
             <select id="ethnicity" wire:model="ethnicity" class="mt-1 w-full">
-                <option selected="selected" >-- select one --</option>
+                <option selected="selected" >-- {{ __("select one") }} --</option>
                 <optgroup label="White">
                   <option value="White English">English</option>
                   <option value="White Welsh">Welsh</option>
@@ -119,8 +119,8 @@
         </div>
 
         <div class="mt-6 col-span-3">
-            <label for="ssn" class="block text-sm font-semibold text-slate-800">{{__("Social Security")}}</label>
-            <input type="password" id="ssn" wire:model="ssn" class="mt-1 w-full" autocomplete="off">
+            <label for="ssn" class="block text-sm font-semibold text-slate-800">{{__("SSN (last four digits)")}}</label>
+            <input type="number" id="ssn" wire:model="ssn" class="mt-1 w-full" autocomplete="off" maxlength="4">
             <p class="w-full text-justify mt-1 text-sm text-slate-600">{{__("Your Social Security Number helps us collect your transcripts and is needed to process financial information. It will may also assist the University in preparing important tax documents help you when you file income taxes in the future.")}}</p>
         </div>
 
