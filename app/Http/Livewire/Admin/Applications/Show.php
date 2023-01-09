@@ -21,6 +21,8 @@ class Show extends Component
     {
         $url = config('app.url') . '/' . $this->application->lang . '/start?application_id=' . $this->application->uuid;
         Mail::to($this->application->email)->send(new SendApplicationNotification($url));
+        session()->flash('flash.banner', 'An application email was successfully sent to ' . $this->application->email);
+        session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('applications.show', ['application' => $this->application->id, 'language' => 'en']);
     }
 
