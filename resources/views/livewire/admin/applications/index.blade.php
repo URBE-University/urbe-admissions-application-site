@@ -26,7 +26,7 @@
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     @forelse ($applications as $application)
                                         <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ date('M d, Y H:i a', strtotime($application->created_at)) }}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ date('M d, Y h:i a', strtotime($application->created_at)) }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm font-medium text-gray-900">{{$application->first_name . ' ' . $application->middle_name . ' ' . $application->last_name}}</div>
                                                 <div class="text-sm text-gray-500">{{$application->email}}</div>
