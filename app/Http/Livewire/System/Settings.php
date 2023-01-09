@@ -33,13 +33,18 @@ class Settings extends Component
             Log::error($th);
         }
 
-        return redirect()->route('settings');
+        return redirect()->route('settings', ['language' => 'en']);
     }
 
     public function delDegree($degree)
     {
-        Degree::find($degree)->delete();
-        return redirect()->route('settings');
+        $degree = Degree::find($degree);
+        foreach ($degree->programs as $program) {
+            $program->concentrations()->delete();
+        }
+        $degree->programs()->delete();
+        $degree->delete();
+        return redirect()->route('settings', ['language' => 'en']);
     }
 
     public function addProgram()
@@ -58,13 +63,15 @@ class Settings extends Component
             Log::error($th);
         }
 
-        return redirect()->route('settings');
+        return redirect()->route('settings', ['language' => 'en']);
     }
 
     public function delProgram($program)
     {
-        Program::find($program)->delete();
-        return redirect()->route('settings');
+        $program = Program::find($program);
+        $program->concentrations()->delete();
+        $program->delete();
+        return redirect()->route('settings', ['language' => 'en']);
     }
 
     public function addConcentration()
@@ -82,13 +89,13 @@ class Settings extends Component
         } catch (\Throwable $th) {
             Log::error($th);
         }
-        return redirect()->route('settings');
+        return redirect()->route('settings', ['language' => 'en']);
     }
 
     public function delConcentration($concentration)
     {
         Concentration::find($concentration)->delete();
-        return redirect()->route('settings');
+        return redirect()->route('settings', ['language' => 'en']);
     }
 
     public function render()

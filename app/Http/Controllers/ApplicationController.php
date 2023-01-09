@@ -116,7 +116,7 @@ class ApplicationController extends Controller
     /**
      * Download completed application
      */
-    public function download(Application $application)
+    public function download($language, Application $application)
     {
         $html = view('pdf.signed-application', ['application' => $application])->render();
         $pdf = BrowserShot::html($html)

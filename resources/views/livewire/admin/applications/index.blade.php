@@ -48,7 +48,7 @@
                                                 @endif
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a href="{{route('applications.show', ['application' => $application->id])}}" class="text-indigo-600 hover:text-indigo-900">{{__("Details")}}</a>
+                                                <a href="{{route('applications.show', ['language' => 'en', 'application' => $application->id])}}" class="text-indigo-600 hover:text-indigo-900">{{__("Details")}}</a>
                                             </td>
                                         </tr>
                                     @empty

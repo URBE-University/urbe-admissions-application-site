@@ -26,7 +26,7 @@
                             </button>
                         </x-slot>
                         <x-slot name="content" class="text-left">
-                            <a href="{{ route('application.download', ['application' => $application->id]) }}"
+                            <a href="{{ route('application.download', ['application' => $application->id, 'language' => app()->getLocale()]) }}"
                                 target="_blank"
                                 class="text-left block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition"
                             >Download Application</a>

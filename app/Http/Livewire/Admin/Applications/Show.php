@@ -12,16 +12,16 @@ class Show extends Component
 {
     public $application;
 
-    public function mount(Application $application)
+    public function mount($language, Application $application)
     {
         $this->application = $application;
     }
 
     public function sendApplicationLink()
     {
-        $url = config('app.url') . '/start?application_id=' . $this->application->application_uuid;
-        Mail::to($this->application->application_email)->send(new SendApplicationNotification($url));
-        return redirect()->route('applications.show', ['application' => $this->application->id]);
+        $url = config('app.url') . '/' . $this->application->lang . '/start?application_id=' . $this->application->uuid;
+        Mail::to($this->application->email)->send(new SendApplicationNotification($url));
+        return redirect()->route('applications.show', ['application' => $this->application->id, 'language' => 'en']);
     }
 
     public function markPaid()
@@ -29,7 +29,7 @@ class Show extends Component
         $this->application->update([
             'received_payment' => 1
         ]);
-        return redirect()->route('applications.show', ['application' => $this->application->id]);
+        return redirect()->route('applications.show', ['application' => $this->application->id, 'language' => 'en']);
     }
 
     public function downloadResume()
