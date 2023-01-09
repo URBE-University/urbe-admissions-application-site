@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Log;
 
 class Settings extends Component
 {
-    public $degree, $degrees, $program, $programs, $concentration, $concentrations;
+    public $degree, $degrees, $program, $programs, $concentration, $concentrations, $degreeModal, $programModal, $concentrationModal;
+    public $degreeName, $programName, $concentrationName;
 
     public function mount()
     {
@@ -33,6 +34,15 @@ class Settings extends Component
             Log::error($th);
         }
 
+        return redirect()->route('settings', ['language' => 'en']);
+    }
+
+    public function editDegree($degree)
+    {
+        $data = Degree::find($degree);
+        $data->update([
+            'name' => $this->degreeName
+        ]);
         return redirect()->route('settings', ['language' => 'en']);
     }
 
@@ -66,6 +76,15 @@ class Settings extends Component
         return redirect()->route('settings', ['language' => 'en']);
     }
 
+    public function editProgram($program)
+    {
+        $data = Program::find($program);
+        $data->update([
+            'name' => $this->programName
+        ]);
+        return redirect()->route('settings', ['language' => 'en']);
+    }
+
     public function delProgram($program)
     {
         $program = Program::find($program);
@@ -89,6 +108,15 @@ class Settings extends Component
         } catch (\Throwable $th) {
             Log::error($th);
         }
+        return redirect()->route('settings', ['language' => 'en']);
+    }
+
+    public function editConcentration($concentration)
+    {
+        $data = Concentration::find($concentration);
+        $data->update([
+            'name' => $this->concentrationName
+        ]);
         return redirect()->route('settings', ['language' => 'en']);
     }
 
