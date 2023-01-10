@@ -10,17 +10,22 @@ use App\Mail\SendApplicationNotification;
 
 class Show extends Component
 {
-    public $application;
+    public $application, $sendApplicationLinkModal, $email;
 
     public function mount($language, Application $application)
     {
         $this->application = $application;
+        $this->email = $this->application->email;
     }
 
     public function sendApplicationLink()
     {
+        if (!$this->application->lang) {
+            $this->application->update(['lang' => 'en']);
+        }
+
         $url = config('app.url') . '/' . $this->application->lang . '/start?application_id=' . $this->application->uuid;
-        Mail::to($this->application->email)->send(new SendApplicationNotification($url));
+        Mail::to($this->email)->send(new SendApplicationNotification($url));
         session()->flash('flash.banner', 'An application email was successfully sent to ' . $this->application->email);
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('applications.show', ['application' => $this->application->id, 'language' => 'en']);

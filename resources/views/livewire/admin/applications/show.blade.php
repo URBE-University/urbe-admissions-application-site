@@ -33,7 +33,7 @@
                                 >Download Application</a>
                             @endif
                             @if (!$application->completed_at)
-                                <button wire:click="sendApplicationLink"
+                                <button wire:click="$toggle('sendApplicationLinkModal')"
                                     class="text-left block w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition"
                                 >Send Application Link</button>
                             @endif
@@ -45,6 +45,16 @@
                             {{-- block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition --}}
                         </x-slot>
                     </x-jet-dropdown>
+
+                    <x-jet-dialog-modal wire:model="sendApplicationLinkModal">
+                        <x-slot name="title">{{ __("Send application link to:") }}</x-slot>
+                        <x-slot name="content">
+                            <x-jet-input type="email" wire:model="email" class="w-full" />
+                        </x-slot>
+                        <x-slot name="footer">
+                            <x-jet-button wire:click="sendApplicationLink">{{ __("Send link") }}</x-jet-button>
+                        </x-slot>
+                    </x-jet-dialog-modal>
                 </div>
             </div>
         </div>

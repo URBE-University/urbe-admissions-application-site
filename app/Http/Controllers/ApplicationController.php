@@ -26,6 +26,11 @@ class ApplicationController extends Controller
             $application = Application::where('uuid', $request->query('application_id'))->first();
             $step = ($request->has('edit_step')) ? $request->query('edit_step') : $application->step;
 
+            // Set the application language
+            if (!$application->lang) {
+                $application->update(['lang' => 'en']);
+            }
+
             switch ($step) {
                 case '1':
                     $this->form_step_text = 'contact-information';
