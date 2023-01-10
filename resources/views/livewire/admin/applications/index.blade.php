@@ -33,7 +33,7 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm">
-                                                    @if ($application->applicant_signature)
+                                                    @if ($application->applicant_signature && $application->applicant_signature_ip && $application->completed_at)
                                                         <span class="text-green-600">{{__("Ready")}}</span>
                                                     @else
                                                         <span class="text-yellow-600">{{__("In progress")}}</span>

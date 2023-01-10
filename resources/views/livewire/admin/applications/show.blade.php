@@ -7,7 +7,7 @@
                 </p>
 
                 <div class="flex items-center space-x-3">
-                    @if ($application->applicant_signature && $application->applicant_signature_ip)
+                    @if ($application->applicant_signature && $application->applicant_signature_ip && $application->completed_at)
                         <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">{{__("Ready")}}</span>
                     @else
                         <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-red-100 text-red-600">{{__("In progress")}}</span>
@@ -42,14 +42,14 @@
                                     class="text-left block w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition"
                                 >Mark as Paid</button>
                             @endif
-                            {{-- block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition --}}
                         </x-slot>
                     </x-jet-dropdown>
 
                     <x-jet-dialog-modal wire:model="sendApplicationLinkModal">
                         <x-slot name="title">{{ __("Send application link to:") }}</x-slot>
                         <x-slot name="content">
-                            <x-jet-input type="email" wire:model="email" class="w-full" />
+                            <x-jet-input type="email" wire:model="email" class="w-full" required/>
+                            <x-jet-input-error for="email"/>
                         </x-slot>
                         <x-slot name="footer">
                             <x-jet-button wire:click="sendApplicationLink">{{ __("Send link") }}</x-jet-button>

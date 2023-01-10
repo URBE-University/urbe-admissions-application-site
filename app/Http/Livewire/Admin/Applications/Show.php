@@ -20,13 +20,17 @@ class Show extends Component
 
     public function sendApplicationLink()
     {
+        $this->validate([
+            'email' => 'required|email|email:dns'
+        ]);
+
         if (!$this->application->lang) {
             $this->application->update(['lang' => 'en']);
         }
 
         $url = config('app.url') . '/' . $this->application->lang . '/start?application_id=' . $this->application->uuid;
         Mail::to($this->email)->send(new SendApplicationNotification($url));
-        session()->flash('flash.banner', 'An application email was successfully sent to ' . $this->application->email);
+        session()->flash('flash.banner', 'An application email was successfully sent to ' . $this->email);
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('applications.show', ['application' => $this->application->id, 'language' => 'en']);
     }
