@@ -65,6 +65,7 @@ class ContactInformation extends Component
                 'state' => $this->state,
                 'zip' => $this->zip,
                 'country' => $this->country,
+                'lang' => app()->getLocale()
             ]);
         } catch (\Throwable $th) {
             Log::error($th);

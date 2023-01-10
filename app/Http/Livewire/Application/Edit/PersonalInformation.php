@@ -16,6 +16,7 @@ class PersonalInformation extends Component
         $this->application = Application::where('uuid', $this->uuid)->first();
         $this->dob = $this->application->dob;
         $this->ssn = Crypt::decryptString($this->application->ssn);
+        $this->dl_passport = Crypt::decryptString($this->application->dl_passport);
         $this->us_resident = ($this->application->us_resident == 1) ? 'yes' : 'no';
         $this->military = ($this->application->military == 1) ? 'yes' : 'no';
         $this->military_civilian = ($this->application->military_civilian == 1) ? 'yes' : 'no';
@@ -28,13 +29,14 @@ class PersonalInformation extends Component
     {
         $this->validate([
             'dob' => 'required|date',
-            'ssn' => 'required',
+            'dl_passport' => 'required',
             'us_resident' => 'required',
             'military' => 'required',
             'military_civilian' => 'required',
         ]);
 
         $encrypted_ssn = ($this->ssn) ? Crypt::encryptString($this->ssn) : null;
+        $encrypted_dl_passport = ($this->dl_passport) ? Crypt::encryptString($this->dl_passport) : null;
         $us_resident = ($this->us_resident === 'yes') ? 1 : 0;
         $military = ($this->military === 'yes') ? 1 : 0;
         $military_civilian = ($this->military_civilian === 'yes') ? 1 : 0;
@@ -50,7 +52,7 @@ class PersonalInformation extends Component
                 'legal_guardian_relation' => $this->legal_guardian_relation,
                 'ssn' => $encrypted_ssn,
                 'us_resident' => $us_resident,
-                'dl_passport' => $this->dl_passport,
+                'dl_passport' => $encrypted_dl_passport,
                 'military' => $military,
                 'military_civilian' => $military_civilian,
             ]);

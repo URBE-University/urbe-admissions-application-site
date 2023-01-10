@@ -63,8 +63,14 @@
             </div>
 
             <div class="mt-6 col-span-3">
-                <label for="ssn" class="block text-sm font-semibold text-slate-800">{{__("Social Security / Passport No.")}}</label>
+                <label for="ssn" class="block text-sm font-semibold text-slate-800">{{__("Social Security")}}</label>
                 <input type="password" id="ssn" wire:model.defer="ssn" class="mt-1 w-full" autocomplete="off">
+                <p class="w-full text-justify mt-1 text-sm text-slate-600">{{__("Your Social Security Number helps us collect your transcripts and is needed to process financial information. It will may also assist the University in preparing important tax documents help you when you file income taxes in the future.")}}</p>
+            </div>
+
+            <div class="mt-6 col-span-3">
+                <label for="passport" class="block text-sm font-semibold text-slate-800">{{__("Driver's license / Passport No.")}}</label>
+                <input type="password" id="passport" wire:model.defer="dl_passport" class="mt-1 w-full" autocomplete="off">
                 <p class="w-full text-justify mt-1 text-sm text-slate-600">{{__("Your Social Security Number helps us collect your transcripts and is needed to process financial information. It will may also assist the University in preparing important tax documents help you when you file income taxes in the future.")}}</p>
             </div>
 

@@ -54,6 +54,7 @@ class PersonalInformation extends Component
                 'dl_passport' => $encrypted_dl_passport,
                 'military' => $military,
                 'military_civilian' => $military_civilian,
+                'lang' => app()->getLocale()
             ]);
 
         } catch (\Throwable $th) {

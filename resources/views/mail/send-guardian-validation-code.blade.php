@@ -11,7 +11,7 @@ Use the code below to sign:
 
 {{ $application->legal_guardian_verification_code }}
 
-@component('mail::button', ['url' => config('app.url') . '/start?application_id=' . $application->uuid . '&guardian=' . $application->legal_guardian_email])
+@component('mail::button', ['url' => config('app.url') . '/en/start?application_id=' . $application->uuid . '&guardian=' . $application->legal_guardian_email])
 Sign authorization
 @endcomponent
 

@@ -167,5 +167,9 @@
     "Application Completed!": "¡Aplicación completada!",
     "Your application has been sent and you should get a confirmation email shortly. If you have any addional questions, please contact us by dialing": "Su aplicación ha sido enviada y debería recibir un correo electrónico de confirmación en breve. Si tiene alguna pregunta adicional, contáctenos llamando al",
     "Application ID: ": "ID de aplicación: ",
-    "Continue to www.urbe.university": "Continuar a www.urbe.university"
+    "Continue to www.urbe.university": "Continuar a www.urbe.university",
+    "Application saved!": "Su aplicación ha sido guardada",
+    "Please check your inbox. We sent you an email with your application link so that you can finish it later.": "Por favor revise su bandeja de entrada. Le enviamos un correo electrónico con el enlace de su aplicación para que pueda terminarla más tarde.",
+    "Exit and continue later": "Salir y continuar más tarde",
+    "Start a new application": "Iniciar una nueva aplicación"
 }

@@ -44,6 +44,7 @@ class EducationBackground extends Component
                 'ps_school_city' => $this->ps_school_city,
                 'ps_school_country' => $this->ps_school_country,
                 'degree_earned' => $this->degree_earned,
+                'lang' => app()->getLocale()
             ]);
 
         } catch (\Throwable $th) {

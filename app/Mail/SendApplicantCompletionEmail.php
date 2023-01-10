@@ -28,6 +28,12 @@ class SendApplicantCompletionEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Your application has been submitted!')->markdown('mail.send-applicant-completion-email');
+        $mdFile = "mail.send-applicant-completion-email";
+        $subject = "Your application has been submitted!";
+        if (app()->getLocale() == 'es') {
+            $mdFile = "mail.send-applicant-completion-email-es";
+            $subject = "Su aplicacion ha sido guardada - URBE University";
+        }
+        return $this->subject($subject)->markdown($mdFile);
     }
 }

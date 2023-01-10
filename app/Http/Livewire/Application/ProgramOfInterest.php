@@ -40,6 +40,7 @@ class ProgramOfInterest extends Component
                 'start_date' => $this->start_date,
                 'program_format' => $this->program_format,
                 'program_language' => $this->program_language,
+                'lang' => app()->getLocale()
             ]);
         } catch (\Throwable $th) {
             Log::error($th);

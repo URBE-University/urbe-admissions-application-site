@@ -30,6 +30,12 @@ class SendApplicationNotification extends Mailable
      */
     public function build()
     {
-        return $this->subject("Your admissions application - URBE University")->markdown('mail.send-application-notification');
+        $mdFile = "mail.send-application-notification";
+        $subject = "Your application has been saved - URBE University";
+        if (app()->getLocale() == 'es') {
+            $mdFile = "mail.send-application-notification-es";
+            $subject = "Su aplicacion ha sido guardada - URBE University";
+        }
+        return $this->subject($subject)->markdown($mdFile);
     }
 }

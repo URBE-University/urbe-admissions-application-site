@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class SendGuardianValidationCode extends Mailable
 {
@@ -30,7 +31,12 @@ class SendGuardianValidationCode extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.send-guardian-validation-code')
-        ->subject("Verification code - URBE University Admissions Application");
+        $mdFile = "mail.send-guardian-validation-code";
+        $subject = "Verification code - URBE University Admissions Application";
+        if (app()->getLocale() == 'es') {
+            $mdFile = "mail.send-guardian-validation-code-es";
+            $subject = "Código de verificación - Aplicacion a URBE University";
+        }
+        return $this->markdown($mdFile)->subject($subject);
     }
 }
