@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\Application;
 
+use App\Mail\SendAdmissionsNewApplicationAlertEmail;
 use Livewire\Component;
 use App\Models\Application;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class ContactInformation extends Component
@@ -67,6 +69,7 @@ class ContactInformation extends Component
                 'country' => $this->country,
                 'lang' => app()->getLocale()
             ]);
+            Mail::to(config('internal.admissions.email'))->send(new SendAdmissionsNewApplicationAlertEmail());
         } catch (\Throwable $th) {
             Log::error($th);
         }
