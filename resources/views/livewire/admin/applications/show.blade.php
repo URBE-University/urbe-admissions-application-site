@@ -7,6 +7,7 @@
                 </p>
 
                 <div class="flex items-center space-x-3">
+                    @livewire('admin.applications.log', ['application' => $application->id])
                     @if ($application->applicant_signature && $application->applicant_signature_ip && $application->completed_at)
                         <span class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">{{__("Ready")}}</span>
                     @else

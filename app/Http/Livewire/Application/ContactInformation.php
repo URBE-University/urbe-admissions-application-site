@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Application;
 use App\Mail\SendAdmissionsNewApplicationAlertEmail;
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -68,6 +69,10 @@ class ContactInformation extends Component
                 'zip' => $this->zip,
                 'country' => $this->country,
                 'lang' => app()->getLocale()
+            ]);
+            DB::table('application_log')->insert([
+                'application_id' => $application->id,
+                'description' => 'Contact information completed.'
             ]);
             Mail::to(config('internal.admissions.email'))->send(new SendAdmissionsNewApplicationAlertEmail());
         } catch (\Throwable $th) {

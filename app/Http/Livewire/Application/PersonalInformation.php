@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Application;
 
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Crypt;
 
@@ -26,7 +27,6 @@ class PersonalInformation extends Component
             'ethnicity' => 'required',
             'gender' => 'required',
             'dob' => 'required|date',
-            'ssn' => 'required|min:4|max:4',
             'us_resident' => 'required',
             'dl_passport' => 'required',
             'military' => 'required',
@@ -56,7 +56,10 @@ class PersonalInformation extends Component
                 'military_civilian' => $military_civilian,
                 'lang' => app()->getLocale()
             ]);
-
+            DB::table('application_log')->insert([
+                'application_id' => $this->application->id,
+                'description' => 'Personal information completed.'
+            ]);
         } catch (\Throwable $th) {
             Log::error($th);
         }

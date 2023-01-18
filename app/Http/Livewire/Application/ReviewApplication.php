@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Application;
 
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
@@ -44,6 +45,10 @@ class ReviewApplication extends Component
         try {
             $this->application->update([
                 'step' => $this->application->step + 1,
+            ]);
+            DB::table('application_log')->insert([
+                'application_id' => $this->application->id,
+                'description' => 'Application review completed.'
             ]);
         } catch (\Throwable $th) {
             Log::error($th);

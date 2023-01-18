@@ -4,8 +4,9 @@ namespace App\Http\Livewire\Application;
 
 use Livewire\Component;
 use App\Models\Application;
-use Illuminate\Support\Facades\Log;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class UploadDocuments extends Component
 {
@@ -50,6 +51,10 @@ class UploadDocuments extends Component
                 'official_transcripts_url' => ($this->official_transcripts) ? $this->official_transcripts->getClientOriginalName() : null,
                 'hs_bs_diploma_url' => ($this->hs_bs_diploma) ? $this->hs_bs_diploma->getClientOriginalName() : null,
                 'id_url' => ($this->id_file) ? $this->id_file->getClientOriginalName() : null,
+            ]);
+            DB::table('application_log')->insert([
+                'application_id' => $this->application->id,
+                'description' => 'Documents upload completed.'
             ]);
         } catch (\Throwable $th) {
             Log::error($th);

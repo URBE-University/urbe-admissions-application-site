@@ -15,7 +15,7 @@ class PersonalInformation extends Component
     {
         $this->application = Application::where('uuid', $this->uuid)->first();
         $this->dob = $this->application->dob;
-        $this->ssn = Crypt::decryptString($this->application->ssn);
+        $this->ssn = ($this->application->ssn) ? Crypt::decryptString($this->application->ssn) : '';
         $this->dl_passport = Crypt::decryptString($this->application->dl_passport);
         $this->us_resident = ($this->application->us_resident == 1) ? 'yes' : 'no';
         $this->military = ($this->application->military == 1) ? 'yes' : 'no';

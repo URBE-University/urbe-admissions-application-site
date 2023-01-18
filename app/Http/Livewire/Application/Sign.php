@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\Application;
 
+use Carbon\Carbon;
 use Livewire\Component;
 use App\Models\Application;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SendApplicantValidationCode;
 use App\Mail\SendGuardianValidationCode;
-use Carbon\Carbon;
+use App\Mail\SendApplicantValidationCode;
 
 class Sign extends Component
 {
@@ -50,6 +51,10 @@ class Sign extends Component
                 'applicant_verification_ip' => request()->getClientIp(),
             ]);
             Mail::to($this->application->email)->send(new SendApplicantValidationCode($applicant_code));
+            DB::table('application_log')->insert([
+                'application_id' => $this->application->id,
+                'description' => 'Sent signature validation code to applicant.'
+            ]);
 
             // Email validation code and link to guardian
             if ($this->application->legal_guardian_email && $this->application->legal_guardian_name) {
@@ -59,6 +64,10 @@ class Sign extends Component
                     'legal_guardian_verification' => Carbon::now(),
                 ]);
                 Mail::to($this->application->legal_guardian_email)->send(new SendGuardianValidationCode($this->application, $guardian_code));
+                DB::table('application_log')->insert([
+                    'application_id' => $this->application->id,
+                    'description' => 'Sent signature validation code to legal guardian.'
+                ]);
             }
 
         } catch (\Throwable $th) {
@@ -83,6 +92,10 @@ class Sign extends Component
                         'legal_guardian_signature' => Carbon::now()->addSeconds(30),
                         'legal_guardian_signature_ip' => request()->getClientIp(),
                     ]);
+                    DB::table('application_log')->insert([
+                        'application_id' => $this->application->id,
+                        'description' => 'Application signed by guardian.'
+                    ]);
                 } catch (\Throwable $th) {
                     Log::error($th);
                 }
@@ -103,6 +116,10 @@ class Sign extends Component
                         'applicant_verification' => Carbon::now(),
                         'applicant_signature' => Carbon::now()->addMinute(),
                         'applicant_signature_ip' => request()->getClientIp(),
+                    ]);
+                    DB::table('application_log')->insert([
+                        'application_id' => $this->application->id,
+                        'description' => 'Application signed by applicant.'
                     ]);
                 } catch (\Throwable $th) {
                     Log::error($th);

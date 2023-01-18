@@ -23,7 +23,7 @@ class PayAndSubmit extends Component
      */
     public function save()
     {
-        return redirect()->route('application.completed', ['application' => $this->uuid]);
+        return redirect()->route('application.completed', ['application' => $this->uuid, 'language' => app()->getLocale()]);
     }
 
     /**

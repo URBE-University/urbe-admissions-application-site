@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Application;
 
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class EducationBackground extends Component
@@ -46,7 +47,10 @@ class EducationBackground extends Component
                 'degree_earned' => $this->degree_earned,
                 'lang' => app()->getLocale()
             ]);
-
+            DB::table('application_log')->insert([
+                'application_id' => $this->application->id,
+                'description' => 'Education background completed.'
+            ]);
         } catch (\Throwable $th) {
             Log::error($th);
         }

@@ -6,6 +6,7 @@ use App\Models\Degree;
 use App\Models\Program;
 use Livewire\Component;
 use App\Models\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class ProgramOfInterest extends Component
@@ -41,6 +42,10 @@ class ProgramOfInterest extends Component
                 'program_format' => $this->program_format,
                 'program_language' => $this->program_language,
                 'lang' => app()->getLocale()
+            ]);
+            DB::table('application_log')->insert([
+                'application_id' => $this->application->id,
+                'description' => 'Program of interest completed.'
             ]);
         } catch (\Throwable $th) {
             Log::error($th);

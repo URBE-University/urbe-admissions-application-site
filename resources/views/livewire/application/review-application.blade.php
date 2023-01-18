@@ -116,7 +116,9 @@
                 <div class="border-t border-slate-200"></div>
                 <div class="grid grid-cols-3 gap-1 sm:gap-4 p-4">
                     <div class="col-span-3 sm:col-span-1 text-sm font-medium text-gray-500">{{__("SSN (last four digits)")}}</div>
-                    <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">******{{ Str::substr(Crypt::decryptString($application->ssn), -4) }}</div>
+                    @if ($application->ssn)
+                        <div class="col-span-3 sm:col-span-2 text-sm text-gray-900">******{{ Str::substr(Crypt::decryptString($application->ssn), -4) }}</div>
+                    @endif
                 </div>
                 <div class="border-t border-slate-200"></div>
                 <div class="grid grid-cols-3 gap-1 sm:gap-4 p-4">

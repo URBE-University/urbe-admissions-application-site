@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Application;
 use Livewire\Component;
 use App\Models\Application;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class WorkHistory extends Component
@@ -38,7 +39,10 @@ class WorkHistory extends Component
                     'job_title' => $this->job_title,
                     'resume_url' => ($this->resume) ? $this->resume->getClientOriginalName() : null,
                 ]);
-
+                DB::table('application_log')->insert([
+                    'application_id' => $this->application->id,
+                    'description' => 'Work history completed.'
+                ]);
             } catch (\Throwable $th) {
                 Log::error($th);
             }
