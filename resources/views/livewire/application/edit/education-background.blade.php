@@ -98,10 +98,7 @@
                 <label for="ps_school_country" class="block text-sm font-semibold text-slate-800">{{__("Institution country")}}</label>
                 <select name="ps_school_country" id="ps_school_country" wire:model="ps_school_country" class="mt-1 w-full">
                     <option value="null">{{__("Select")}}</option>
-                    @forelse (App\Models\Countries::getCountryCodes() as $country_code)
-                        <option value="{{$country_code['name']}}">{{ $country_code['name']}}</option>
-                    @empty
-                    @endforelse
+                    @include('partials.country-name-codes')
                 </select>
             </div>
 

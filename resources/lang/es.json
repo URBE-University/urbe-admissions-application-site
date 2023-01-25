@@ -171,5 +171,11 @@
     "Application saved!": "Su aplicación ha sido guardada",
     "Please check your inbox. We sent you an email with your application link so that you can finish it later.": "Por favor revise su bandeja de entrada. Le enviamos un correo electrónico con el enlace de su aplicación para que pueda terminarla más tarde.",
     "Exit and continue later": "Salir y continuar más tarde",
-    "Start a new application": "Iniciar una nueva aplicación"
+    "Start a new application": "Iniciar una nueva aplicación",
+    "Application Found!": "¡Aplicación encontrada!",
+    "We have found your application. Please click the button below to continue the process.": "Hemos encontrado su aplicación. Por favor, haga clic en el botón de abajo para continuar con el proceso.",
+    "Continue Application": "Continuar Aplicación",
+    "If you would like to restart your application instead, please click the link below.": "Si desea reiniciar su aplicación, haga clic en el enlace a continuación.",
+    "Start again": "Empezar de nuevo",
+    "Please know that this will erase any progress made so far, and you will have to start from the beginning.": "Tenga en cuenta que esto borrará cualquier progreso realizado hasta el momento y tendrá que empezar desde el principio."
 }

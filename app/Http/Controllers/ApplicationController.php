@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use Spatie\Browsershot\Browsershot;
 use App\Events\ApplicationCompleted;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class ApplicationController extends Controller
@@ -89,6 +90,28 @@ class ApplicationController extends Controller
     public function saved()
     {
         return view('web.application.saved');
+    }
+
+    public function continue($language, $application)
+    {
+        app()->setLocale($language);
+
+        return view('web.application.continue', [
+            'application' => $application
+        ]);
+    }
+
+    public function restart(Request $request)
+    {
+        $application = Application::where('uuid', $request->application)->first();
+        if ($application) {
+            try {
+                $application->delete();
+            } catch (\Throwable $th) {
+                Log::error($th);
+            }
+        }
+        return redirect()->to('/');
     }
 
     /**

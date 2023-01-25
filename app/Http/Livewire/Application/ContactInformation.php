@@ -35,6 +35,12 @@ class ContactInformation extends Component
     {
         $uuid = Str::uuid();
 
+        // Check the application doesn't exist
+        if (Application::where('email', $this->email)->count() > 0) {
+            $application = Application::where('email', $this->email)->first();
+            return redirect()->route('application.continue', ['application' => $application->uuid, 'language' => app()->getLocale()]);
+        }
+
         $this->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -53,12 +59,12 @@ class ContactInformation extends Component
             $application = Application::create([
                 'uuid' => $uuid,
                 'step' => 2,
-                'first_name' => $this->first_name,
+                'first_name' => ucfirst($this->first_name),
                 'middle_name' => $this->middle_name,
-                'last_name' => $this->last_name,
-                'prev_first_name' => $this->prev_first_name,
+                'last_name' => ucfirst($this->last_name),
+                'prev_first_name' => ucfirst($this->prev_first_name),
                 'prev_middle_name' => $this->prev_middle_name,
-                'prev_last_name' => $this->prev_last_name,
+                'prev_last_name' => ucfirst($this->prev_last_name),
                 'email' => $this->email,
                 'phone_code' => $this->phone_code,
                 'phone' => $this->phone,
@@ -70,6 +76,7 @@ class ContactInformation extends Component
                 'country' => $this->country,
                 'lang' => app()->getLocale()
             ]);
+
             DB::table('application_log')->insert([
                 'application_id' => $application->id,
                 'description' => 'Contact information completed.'

@@ -7,12 +7,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/en');
 
+    Route::post('/restart', [ApplicationController::class, 'restart'])->name('application.restart');
+
     Route::middleware('set.language')->prefix('{language}')->group(function () {
         Route::get('/', [WebController::class, 'home'])->name('home');
         Route::get('/start', [ApplicationController::class, 'index'])->name('application.start');
         Route::get('/application-not-found', [ApplicationController::class, 'not_found'])->name('application.not_found');
         Route::get('/application-saved', [ApplicationController::class, 'saved'])->name('application.saved');
         Route::get('/application-completed/{application}', [ApplicationController::class, 'completed'])->name('application.completed');
+        Route::get('/continue/{application}', [ApplicationController::class, 'continue'])->name('application.continue');
 
         Route::get('/guardian-success', function () {
             return view('web.guardian-success');
