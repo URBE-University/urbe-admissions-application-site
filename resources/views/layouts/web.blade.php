@@ -11,6 +11,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         @vite('resources/css/app.css')
+        <!-- Fathom - beautiful, simple website analytics -->
+        <script src="https://cdn.usefathom.com/script.js" data-site="MOMNNCBJ" defer></script>
+        <!-- / Fathom -->
         @livewireStyles
         @vite('resources/js/app.js')
     </head>
