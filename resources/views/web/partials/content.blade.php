@@ -7,7 +7,7 @@
         <div class="mt-12 grid grid-cols-2 gap-8">
             {{-- Gather documentation --}}
             <div class="col-span-2 md:col-span-1 px-8 py-12 w-full hover:bg-sky-50 hover:border-sky-50 border border-slate-300 rounded-xl group group-hover:bg-sky-50 transition-colors">
-                <div class="inline-block text-xs text-sky-600 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">1. {{__("Prepare")}}</div>
+                <div class="inline-block text-xs text-sky-800 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">1. {{__("Prepare")}}</div>
                 <div class="mt-6">
                     <h3 class="text-2xl font-bold text-[#073260]">{{__("Review your requirements")}}</h3>
                     <p class="mt-3 text-lg">{{__("Before you start your application, please take a moment to review your program-specific requirements.")}}</p>
@@ -30,7 +30,7 @@
 
             {{-- Fill out application --}}
             <div class="col-span-2 md:col-span-1 px-8 py-12 w-full hover:bg-sky-50 hover:border-sky-50 border border-slate-300 rounded-xl group group-hover:bg-sky-50 transition-colors">
-                <div class="inline-block text-xs text-sky-600 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">2. {{__("Apply")}}</div>
+                <div class="inline-block text-xs text-sky-800 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">2. {{__("Apply")}}</div>
                 <div class="mt-6">
                     <h3 class="text-2xl font-bold text-[#073260]">{{__("Fill out your application")}}</h3>
                     <p class="mt-3 text-lg">{{__("Once you have all the necessary documents and information, start by completing your online application to URBE University.")}}</p>
@@ -42,7 +42,7 @@
 
             {{-- Application review --}}
             <div class="col-span-2 md:col-span-1 px-8 py-12 w-full hover:bg-sky-50 hover:border-sky-50 border border-slate-300 rounded-xl group group-hover:bg-sky-50 transition-colors">
-                <div class="inline-block text-xs text-sky-600 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">3. {{__("Get admitted")}}</div>
+                <div class="inline-block text-xs text-sky-800 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">3. {{__("Get admitted")}}</div>
                 <div class="mt-6">
                     <h3 class="text-2xl font-bold text-[#073260]">{{__("Application review")}}</h3>
                     <p class="mt-3 text-lg">{{__("After you submit your application, it will be reviewed by our Admissions and Academic departments, and you should be hearing back from us within 24 hours of your application. If you have any questions, please schedule a call with our Admissions team.")}}</p>
@@ -51,7 +51,7 @@
 
             {{-- Meet with advisor --}}
             <div class="col-span-2 md:col-span-1 px-8 py-12 w-full hover:bg-sky-50 hover:border-sky-50 border border-slate-300 rounded-xl group group-hover:bg-sky-50 transition-colors">
-                <div class="inline-block text-xs text-sky-600 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">4. {{__("Tuition and aid")}}</div>
+                <div class="inline-block text-xs text-sky-800 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">4. {{__("Tuition and aid")}}</div>
                 <div class="mt-6">
                     <h3 class="text-2xl font-bold text-[#073260]">{{__("Meet with your financial and academic advisors")}}</h3>
                     <p class="mt-3 text-lg">{{__("Once you are admitted, we will coordinate meetings with your academic and financial advisors, so that they can go over your classes schedule, and financial responsibilities respectively.")}}</p>
@@ -60,7 +60,7 @@
 
             {{-- Onboard and start classes --}}
             <div class="col-span-2 px-8 py-12 w-full hover:bg-sky-50 hover:border-sky-50 border border-slate-300 rounded-xl group group-hover:bg-sky-50 transition-colors">
-                <div class="inline-block text-xs text-sky-600 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">5. {{__("Onboard and Go")}}</div>
+                <div class="inline-block text-xs text-sky-800 font-medium tracking-wide uppercase px-3 py-1 bg-sky-100 rounded-xl group-hover:bg-white">5. {{__("Onboard and Go")}}</div>
                 <div class="mt-6">
                     <h3 class="text-2xl font-bold text-[#073260]">{{__("Start classes on the next academic period")}}</h3>
                     <p class="mt-3 text-lg">{{__("Congratulations! You are now officially ready to start classes at URBE University. At this point, you will receive information about how to navigate URBE's learning environments. With this you will be ready to start on the next academic period.")}}</p>
