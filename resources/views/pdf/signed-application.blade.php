@@ -156,11 +156,7 @@
                 <div class="field-container">
                     <span class="field-label">{{__("SSN (Last 4):")}}</span>
                     <span style="margin-left: .6rem">
-                        @if ($application->ssn)
-                            {{ Crypt::decryptString($application->ssn) }}
-                        @else
-                            -
-                        @endif
+                        {{ ($application->ssn) ? '******' . Str::substr(Crypt::decryptString($application->ssn), -4) : '-' }}
                     </span>
                 </div>
             </div>
