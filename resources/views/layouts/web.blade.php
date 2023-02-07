@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'URBE University Admissions') }}</title>
+        <meta name="description" content="Get your degree at URBE University. Apply today!">
         <link rel="shortcut icon" href="{{ asset('urbe-logo.svg') }}" type="image/x-icon">
 
         <!-- Fonts -->
