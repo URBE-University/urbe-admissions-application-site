@@ -154,7 +154,7 @@
             </div>
             <div class="grid-item">
                 <div class="field-container">
-                    <span class="field-label">{{__("Social Security:")}}</span>
+                    <span class="field-label">{{__("SSN (Last 4):")}}</span>
                     <span style="margin-left: .6rem">
                         @if ($application->ssn)
                             {{ Crypt::decryptString($application->ssn) }}
