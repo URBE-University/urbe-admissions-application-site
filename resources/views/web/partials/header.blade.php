@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="col-span-2 md:col-span-1">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt=""
+                <img src="{{ asset('students.webp') }}" alt="Image of students smiling"
                     class="object-center object-cover w-full aspect-video md:aspect-square rounded-xl">
             </div>
         </div>
