@@ -27,7 +27,7 @@ class Save extends Component
         ]);
         $url = config('app.url') . '/' . $this->collection->lang . '/start?application_id=' . $this->application_uuid;
         DB::table('application_log')->insert([
-            'application_id' => $this->application->id,
+            'application_id' => $this->application_uuid,
             'description' => 'Application saved!'
         ]);
         Mail::to($this->application_email)->send(new SendApplicationNotification($url));
