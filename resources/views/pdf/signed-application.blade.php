@@ -163,7 +163,7 @@
             <div class="grid-item">
                 <div class="field-container">
                     <span class="field-label">{{__("ID:")}}</span>
-                    <span style="margin-left: .6rem">{{__("Attached to application")}}</span>
+                    <span style="margin-left: .6rem">{{ Crypt::decryptString($application->dl_passport) ?? '-' }}</span>
                 </div>
             </div>
 
