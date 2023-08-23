@@ -149,6 +149,17 @@
             </div>
         </div>
 
+        <div class="col-span-3 mt-6">
+            <div class="block font-semibold text-slate-800">{{ __("Are you interested in applying for a student visa?") }}</div>
+            <p class="w-full text-justify mt-2 text-sm text-slate-600">{{__("Only check this box if you are interested on applying for a student visa.")}}</p>
+            <label for="is_visa" class="mt-1 flex items-center space-x-3">
+                <input type="checkbox" name="is_visa" id="is_visa" wire:model="is_visa">
+                <span class="text-sm">
+                    {{__("Yes. I am interested in applying for a student visa.")}}
+                </span>
+            </label>
+        </div>
+
         {{-- Disclaimer --}}
         <div class="mt-6 col-span-3">
             <p class="w-full text-justify mt-1 text-xs text-slate-600">{{__("By clicking 'Continue' you are giving your express written consent for URBE University to contact you for marketing purposes concerning its educational programs and services using automated technology for calls and periodic texts to any number you provide. Message and data rates may apply. This consent is not required to purchase goods and services. This consent is not required to complete an application for admission to URBE University. If you wish to complete an application for admission without providing this consent, please request information by contacting the University directly at (844) 744-URBE. If you no longer wish to receive marketing text messages, reply STOP to cancel such future text messages. If you no longer wish to receive automated marketing phone calls, you may opt out by expressing your preference to an enrollment representative or by emailing optmeout@urbe.university")}}</p>

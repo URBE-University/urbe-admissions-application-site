@@ -29,7 +29,8 @@ class ContactInformation extends Component
             $city,
             $state,
             $zip,
-            $country;
+            $country,
+            $is_visa = false;
 
     public function save()
     {
@@ -74,6 +75,7 @@ class ContactInformation extends Component
                 'state' => $this->state,
                 'zip' => $this->zip,
                 'country' => $this->country,
+                'is_visa' => $this->is_visa,
                 'lang' => app()->getLocale()
             ]);
 

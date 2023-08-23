@@ -10,6 +10,7 @@ class ContactDetails extends Component
 {
     public $editModal;
     public $uuid;
+    public $application;
 
     public  $first_name,
             $middle_name,
@@ -27,7 +28,8 @@ class ContactDetails extends Component
             $city,
             $state,
             $zip,
-            $country;
+            $country,
+            $is_visa;
 
     public function mount()
     {
@@ -49,6 +51,7 @@ class ContactDetails extends Component
         $this->state = $this->application->state;
         $this->zip = $this->application->zip;
         $this->country = $this->application->country;
+        $this->is_visa = $this->application->is_visa;
     }
 
     public function update()
@@ -85,6 +88,7 @@ class ContactDetails extends Component
                 'state' => $this->state,
                 'zip' => $this->zip,
                 'country' => $this->country,
+                'is_visa' => $this->is_visa,
             ]);
 
         } catch (\Throwable $th) {

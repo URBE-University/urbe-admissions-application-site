@@ -151,6 +151,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-span-3">
+                <div class="block font-semibold text-slate-800">{{ __("Are you interested in applying for a student visa?") }}</div>
+                <p class="w-full text-justify mt-2 text-sm text-slate-600">{{__("Only check this box if you are interested on applying for a student visa.")}}</p>
+                <label for="is_visa" class="mt-1 flex items-center space-x-3">
+                    <input type="checkbox" name="is_visa" id="is_visa" wire:model="is_visa">
+                    <span class="text-sm">
+                        {{__("Yes. I am interested in applying for a student visa.")}}
+                    </span>
+                </label>
+            </div>
         </x-slot>
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$toggle('editModal')">

@@ -15,7 +15,6 @@
                 <option value="female">{{__("Female")}}</option>
                 <option value="male">{{__("Male")}}</option>
                 <option value="non-binary">{{__("Non binary")}}</option>
-
             </select>
             @error('gender')
                 <span class="text-sm text-red-600">{{$message}}</span>
