@@ -68,7 +68,7 @@
     <body>
         <div class="container">
             <div class="head">
-                <img src="https://admissions.urbe.university/urbe-logo.svg" alt="URBE University" style="width: 14rem; margin-left: auto; margin-right: auto; display: block">
+                <img src="https://admissions.urbeuniversity.edu/urbe-logo.svg" alt="URBE University" style="width: 14rem; margin-left: auto; margin-right: auto; display: block">
                 <div style="margin-top: 1rem">{!!__("11430 NW 20<sup>th</sup> St. Suite 150 Sweetwater, Florida. 33172")!!}</div>
                 <div style="margin-top: .5rem; font-weight:800; text-transform:uppercase; font-size: 1.5rem">{{__("Application for admission")}}</div>
                 <p>{{ $application->uuid }}</p>
@@ -178,6 +178,13 @@
                 <div class="field-container">
                     <span class="field-label">{{__("Ethnicity:")}}</span>
                     <span style="margin-left: .6rem">{{ $application->ethnicity }}</span>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="field-container">
+                    <span class="field-label">{{__("Interested in Student Visa (I-20):")}}</span>
+                    <span style="margin-left: .6rem">{{ ($application->is_visa) ? "YES" : "NO" }}</span>
                 </div>
             </div>
 
