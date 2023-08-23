@@ -184,7 +184,7 @@
             <div class="grid-item">
                 <div class="field-container">
                     <span class="field-label">{{__("Interested in Student Visa (I-20):")}}</span>
-                    <span style="margin-left: .6rem">{{ ($application->is_visa) ? "YES" : "NO" }}</span>
+                    <span style="margin-left: .6rem">{{ ($application->is_visa) ? "Yes" : "No" }}</span>
                 </div>
             </div>
 
