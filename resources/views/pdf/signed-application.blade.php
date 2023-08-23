@@ -200,7 +200,7 @@
             <div class="" style="grid-column: span 3 / span 3; border: 1px solid #555e6d;">
                 <div class="field-container">
                     <span class="field-label">{{__("Concentration:")}}</span>
-                    <span style="margin-left: .6rem">{{ $application->concentration }}</span>
+                    <span style="margin-left: .6rem">{{ $application->concentration ?? "N/A" }}</span>
                 </div>
             </div>
             <div class="" style="grid-column: span 3 / span 3; border: 1px solid #555e6d;">
