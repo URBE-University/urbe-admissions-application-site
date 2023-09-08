@@ -7,7 +7,19 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <x-jet-input type="search" wire:model="search" placeholder="Search by Last Name" autofocus class="max-w-lg"/>
+            <div class="flex items-center justify-between">
+                <x-jet-input type="search" wire:model="search" placeholder="Search by Last Name" autofocus class="max-w-lg"/>
+                <div class="flex items-center space-x-4">
+                    <x-label for="qty" value="Show items"/>
+                    <select id="qty" wire:model="qty" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                        <option value="15">15</option>
+                        <option value="25">25</option>
+                        <option value="35">35</option>
+                        <option value="50">50</option>
+                        <option value="{{ $applications->count() }}">Show all</option>
+                    </select>
+                </div>
+            </div>
             <div class="flex flex-col">
                 <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
