@@ -16,7 +16,7 @@
                         <option value="25">25</option>
                         <option value="35">35</option>
                         <option value="50">50</option>
-                        <option value="{{ $applications->count() }}">Show all</option>
+                        <option value="{{ \App\Model\Application::count() }}">Show all</option>
                     </select>
                 </div>
             </div>
