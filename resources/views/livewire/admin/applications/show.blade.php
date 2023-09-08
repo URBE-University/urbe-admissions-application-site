@@ -9,7 +9,7 @@
                 <div class="flex items-center space-x-3">
                     @livewire('admin.applications.log', ['application' => $application->id])
                     @if ($application->is_visa)
-                        <div class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-emerald-200 text-emerald-700">
+                        <div class="px-4 py-1 rounded-full text-xs uppercase font-semibold bg-green-100 text-green-600">
                             {{ __("Interested in Visa") }}
                         </div>
                     @endif
