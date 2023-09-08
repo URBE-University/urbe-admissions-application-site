@@ -10,7 +10,7 @@
             <div class="flex items-center justify-between">
                 <x-jet-input type="search" wire:model="search" placeholder="Search by Last Name" autofocus class="max-w-lg"/>
                 <div class="flex items-center space-x-4">
-                    <x-jet-label for="qty" value="Show items" class="flex-none" />
+                    <x-jet-label for="qty" value="Show items" class="flex-none w-full" />
                     <select id="qty" wire:model="qty" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                         <option value="15">15</option>
                         <option value="25">25</option>
