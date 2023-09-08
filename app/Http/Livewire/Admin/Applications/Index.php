@@ -15,7 +15,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.admin.applications.index', [
-            'applications' => Application::where('last_name', '%' . $this->search . '%')->orderBy('updated_at', 'DESC')->paginate(25)
+            'applications' => Application::where('last_name', '%' . $this->search . '%')->paginate(25)
         ]);
     }
 }
