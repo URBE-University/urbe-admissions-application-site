@@ -2,7 +2,7 @@
     {{-- Form --}}
     <div class="grid grid-cols-3 gap-4">
         <div class="col-span-3 text-center">
-            <img src="https://urbe.university/wp-content/uploads/2019/01/urbe-white-logo.jpg" alt="" class="h-44 mx-auto">
+            <img src="https://urbeuniversity.edu/static_assets/urbe-logo.svg" alt="" class="h-44 mx-auto">
             <div class="mt-2 text-center">{!!__("11430 NW 20<sup>th</sup> St. Suite 150 Sweetwater, Florida. 33172")!!}</div>
             <div class="mt-2 font-bold tracking-wide uppercase">{{__("Application for admission")}}</div>
         </div>
