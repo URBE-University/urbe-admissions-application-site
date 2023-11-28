@@ -250,6 +250,7 @@
                         @endif
                     </div>
                 </div>
+                {{ $application->legal_guardian_signature }}
                 <div class="" style="grid-column: span 1 / span 1">
                     <div class="field-container" style="border-bottom: 1px solid #555e6d">
                         <span class="field-label">{{__("Date:")}}</span>
