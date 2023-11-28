@@ -253,7 +253,7 @@
                 <div class="" style="grid-column: span 1 / span 1">
                     <div class="field-container" style="border-bottom: 1px solid #555e6d">
                         <span class="field-label">{{__("Date:")}}</span>
-                        <span style="margin-left: .6rem">{{ ( !$empty($application->legal_guardian_signature) ) ? Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") : '' }}</span>
+                        <span style="margin-left: .6rem">{{ ( !empty($application->legal_guardian_signature) ) ? Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") : '' }}</span>
                     </div>
                 </div>
             @endif
