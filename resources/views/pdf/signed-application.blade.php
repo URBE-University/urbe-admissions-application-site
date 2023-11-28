@@ -250,11 +250,11 @@
                         @endif
                     </div>
                 </div>
-                {{ $application->legal_guardian_signature }}
+                {{ $application->legal_guardian_verification }}
                 <div class="" style="grid-column: span 1 / span 1">
                     <div class="field-container" style="border-bottom: 1px solid #555e6d">
                         <span class="field-label">{{__("Date:")}}</span>
-                        <span style="margin-left: .6rem">{{ ( !empty($application->legal_guardian_signature) ) ? Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") : '' }}</span>
+                        <span style="margin-left: .6rem">{{ ( !empty($application->legal_guardian_verification) ) ? Carbon\Carbon::parse($application->legal_guardian_verification)->format("m/d/Y h:i:s a") : '' }}</span>
                     </div>
                 </div>
             @endif
@@ -339,8 +339,8 @@
 
                 <div class="audit-item">
                     <div class="">&#9745; Application signed and finalized</div>
-                    <div class="">{{ $application->legal_guardian_name . __(" signed the document from IP: ") . $application->legal_guardian_signature_ip . __(" using code ") . $application->legal_guardian_verification_code }}</div>
-                    <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") }}</div>
+                    <div class="">{{ $application->legal_guardian_name . __(" signed the document from IP: ") . $application->legal_guardian_verification_ip . __(" using code ") . $application->legal_guardian_verification_code }}</div>
+                    <div class="" style="text-align: right">{{ Carbon\Carbon::parse($application->legal_guardian_verification)->format("m/d/Y h:i:s a") }}</div>
                 </div>
             @endif
 
