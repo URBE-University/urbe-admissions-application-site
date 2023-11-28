@@ -235,26 +235,29 @@
                 </div>
             </div>
 
-            <div class="" style="grid-column: span 3 / span 3">
-                <div class="field-container" style="border-bottom: 1px solid #555e6d">
-                    <span class="field-label">{{__("Legal Guardian Name (if applicant under 18):")}}</span>
-                    <span style="margin-left: .6rem">{{ $application->legal_guardian_name ?? '' }}</span>
+            @if ($application->legal_guardian_name && $application->legal_guardian_email)
+                <div class="" style="grid-column: span 3 / span 3">
+                    <div class="field-container" style="border-bottom: 1px solid #555e6d">
+                        <span class="field-label">{{__("Legal Guardian Name (if applicant under 18):")}}</span>
+                        <span style="margin-left: .6rem">{{ $application->legal_guardian_name ?? '' }}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="" style="grid-column: span 2 / span 2">
-                <div class="field-container" style="border-bottom: 1px solid #555e6d">
-                    <span class="field-label">{{__("Legal Guardian Signature:")}}</span>
-                    @if ($application->legal_guardian_name)
-                        <span style="margin-left: .6rem; font-size: 8px"><span class="signature">{{ $application->legal_guardian_name }}</span> <span style="margin-left: .6rem">sigature-{{ $application->legal_guardian_verification_code }}</span></span>
-                    @endif
+                <div class="" style="grid-column: span 2 / span 2">
+                    <div class="field-container" style="border-bottom: 1px solid #555e6d">
+                        <span class="field-label">{{__("Legal Guardian Signature:")}}</span>
+                        @if ($application->legal_guardian_name)
+                            <span style="margin-left: .6rem; font-size: 8px"><span class="signature">{{ $application->legal_guardian_name }}</span> <span style="margin-left: .6rem">sigature-{{ $application->legal_guardian_verification_code }}</span></span>
+                        @endif
+                    </div>
                 </div>
-            </div>
-            <div class="" style="grid-column: span 1 / span 1">
-                <div class="field-container" style="border-bottom: 1px solid #555e6d">
-                    <span class="field-label">{{__("Date:")}}</span>
-                    <span style="margin-left: .6rem">{{ Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") }}</span>
+                <div class="" style="grid-column: span 1 / span 1">
+                    <div class="field-container" style="border-bottom: 1px solid #555e6d">
+                        <span class="field-label">{{__("Date:")}}</span>
+                        <span style="margin-left: .6rem">{{ ( !$empty($application->legal_guardian_signature) ) ? Carbon\Carbon::parse($application->legal_guardian_signature)->format("m/d/Y h:i:s a") : '' }}</span>
+                    </div>
                 </div>
-            </div>
+            @endif
+
 
             <div class="title-bar">
                 {{__("Academic Review Commitee Comments")}}

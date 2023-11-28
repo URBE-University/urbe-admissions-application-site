@@ -146,8 +146,6 @@ class ApplicationController extends Controller
      */
     public function download($language, Application $application)
     {
-        dd($application);
-
         $html = view('pdf.signed-application', ['application' => $application])->render();
         $pdf = BrowserShot::html($html)
             ->format('Letter')
