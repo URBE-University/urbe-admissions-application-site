@@ -10,7 +10,8 @@
             {{-- Apply Now button --}}
             <div class="flex items-center space-x-6">
                 @livewire('lang-switcher')
-                <a  href="{{ route('application.start', app()->getLocale()) }}" class="hidden sm:block apply-btn">{{ __("Apply Now") }}</a>
+                {{-- <a  href="{{ route('application.start', app()->getLocale()) }}" class="hidden sm:block apply-btn">{{ __("Apply Now") }}</a> --}}
+                <a  href="{{ route('web.v2.apply', app()->getLocale()) }}" class="hidden sm:block apply-btn">{{ __("Apply Now") }}</a>
             </div>
         </div>
     </div>

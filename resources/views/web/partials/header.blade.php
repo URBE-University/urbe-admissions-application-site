@@ -7,7 +7,7 @@
                     <p>{{ __("Supercharge your future with a degree from URBE University. We work closely with you to ensure you are well-informed throughout your application process. Start your application today, or give us a call. We are ready for you.") }}</p>
                 </div>
                 <div class="mt-10 md:flex items-center justify-center md:justify-start gap-6">
-                    <a  href="{{ route('application.start', app()->getLocale()) }}" class="block text-center apply-btn">{{ __("Apply Now") }}</a>
+                    <a  href="{{ route('web.v2.apply', app()->getLocale()) }}" class="block text-center apply-btn">{{ __("Apply Now") }}</a>
                     <a  target="_blank" href="https://outlook.office365.com/owa/calendar/MeetwithURBEUniversity@urbe.university/bookings/s/V--khBDgG0qSCQI80T7Nyw2"
                         class="mt-6 md:mt-0 block text-center font-medium">{{__("Talk to admissions")}}</a>
                 </div>
